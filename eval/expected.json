@@ -1,0 +1,250 @@
+{
+  "today": "2026-10-21",
+  "files": {
+    "receipt_bestbuy.png": {
+      "items": [
+        {
+          "merchant": "Best Buy",
+          "amount": 348.0,
+          "purchase_date": "2026-10-12"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "return_by",
+          "due_date": "2026-10-27"
+        },
+        {
+          "type": "warranty_until",
+          "due_date": "2027-10-12"
+        }
+      ]
+    },
+    "receipt_target.png": {
+      "items": [
+        {
+          "merchant": "Target",
+          "amount": 89.99,
+          "purchase_date": "2026-09-30"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "return_by",
+          "due_date": "2026-12-29"
+        }
+      ]
+    },
+    "invoice_apple.pdf": {
+      "items": [
+        {
+          "merchant": "Apple",
+          "amount": 249.0,
+          "purchase_date": "2026-10-15"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "return_by",
+          "due_date": "2026-10-29"
+        },
+        {
+          "type": "warranty_until",
+          "due_date": "2027-10-15"
+        }
+      ]
+    },
+    "invoice_ikea.pdf": {
+      "items": [
+        {
+          "merchant": "IKEA",
+          "amount": 199.0,
+          "purchase_date": "2026-08-01"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "return_by",
+          "due_date": "2027-08-01"
+        }
+      ]
+    },
+    "amazon_order.eml": {
+      "items": [
+        {
+          "merchant": "Amazon",
+          "amount": 159.99,
+          "purchase_date": "2026-10-05"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "return_by",
+          "due_date": "2026-11-04"
+        },
+        {
+          "type": "warranty_until",
+          "due_date": "2027-10-05"
+        }
+      ]
+    },
+    "adobe_trial.eml": {
+      "items": [
+        {
+          "merchant": "Adobe",
+          "amount": 59.99,
+          "purchase_date": "2026-10-18"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "trial_end",
+          "due_date": "2026-10-25"
+        }
+      ]
+    },
+    "audible_trial.eml": {
+      "items": [
+        {
+          "merchant": "Audible",
+          "amount": 14.95,
+          "purchase_date": "2026-10-01"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "trial_end",
+          "due_date": "2026-10-31"
+        }
+      ]
+    },
+    "newsletters.mbox": {
+      "items": [
+        {
+          "merchant": "Spotify",
+          "amount": 11.99,
+          "purchase_date": "2026-10-03"
+        },
+        {
+          "merchant": "New York Times",
+          "amount": 6.25,
+          "purchase_date": "2026-10-10"
+        },
+        {
+          "merchant": "Dell",
+          "amount": 1299.0,
+          "purchase_date": "2026-09-25"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "renewal",
+          "due_date": "2026-11-03"
+        },
+        {
+          "type": "renewal",
+          "due_date": "2026-11-10"
+        },
+        {
+          "type": "return_by",
+          "due_date": "2026-10-25"
+        },
+        {
+          "type": "warranty_until",
+          "due_date": "2027-09-25"
+        }
+      ]
+    },
+    "random_meme.jpg": {
+      "items": [],
+      "deadlines": []
+    },
+    "peacock_trial.eml": {
+      "items": [
+        {
+          "merchant": "Peacock",
+          "amount": 7.99,
+          "purchase_date": "2026-10-16"
+        }
+      ],
+      "deadlines": [
+        {
+          "type": "trial_end",
+          "due_date": "2026-10-23"
+        }
+      ]
+    }
+  },
+  "subscriptions": [
+    {
+      "match": "netflix",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "hulu",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "disney",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "max",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "spotify",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "apple music",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "icloud",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "planet",
+      "flags": [
+        "zombie"
+      ]
+    },
+    {
+      "match": "nytimes",
+      "flags": [
+        "price_increase"
+      ]
+    },
+    {
+      "match": "dropbox",
+      "flags": [
+        "duplicate"
+      ]
+    },
+    {
+      "match": "ai tool",
+      "flags": [
+        "zombie"
+      ]
+    },
+    {
+      "match": "adobe",
+      "flags": []
+    }
+  ]
+}

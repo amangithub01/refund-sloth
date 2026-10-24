@@ -1,0 +1,72 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/instrument-sans/400.css";
+@import "@fontsource/instrument-sans/500.css";
+@import "@fontsource/instrument-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "tailwindcss";
+
+/* Veyra-inspired theme: warm cream paper, deep burgundy ink, gold / sage / terracotta accents. Fonts are bundled, so it works offline. */
+@theme {
+  --color-ink: #391a18;
+  --color-ink-deep: #2a1311;
+  --color-ink-soft: #4a2522;
+  --color-ink-muted: #6b3b35;
+  --color-cream: #e9e6d8;
+  --color-cream-dark: #ddd8c6;
+  --color-paper: #f3f0e6;
+  --color-ivory: #faf8f2;
+  --color-card: #f6f4ec;
+  --color-gold: #c8ae82;
+  --color-gold-dark: #9e8155;
+  --color-sage: #9aa394;
+  --color-sage-dark: #66705f;
+  --color-stone: #7d796f;
+  --color-stone-dark: #5f5b53;
+  --color-stone-light: #a8a398;
+  --color-terracotta: #a65a49;
+  --color-negative: #9b3d33;
+  --color-negative-soft: #e3a196;
+  --color-positive: #4d6b49;
+  --color-positive-soft: #a9c2a0;
+  --color-line: #391a181f;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Instrument Sans", "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  html { color-scheme: light; }
+  body { @apply bg-cream font-sans text-ink antialiased; }
+  ::selection { background: var(--color-gold); color: var(--color-ink); }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 500; letter-spacing: -0.03em; line-height: 1.05; }
+}
+
+@utility card { @apply rounded-2xl border border-line bg-card p-5; box-shadow: 0 1px 2px #391a180a, 0 12px 32px -18px #391a1840; }
+@utility btn { @apply inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none; }
+@utility btn-primary { @apply btn bg-ink text-paper hover:bg-ink-soft; box-shadow: 0 8px 18px -8px #391a18aa; }
+@utility btn-ghost { @apply btn border border-line bg-ivory/70 text-ink hover:bg-ivory; }
+@utility btn-icon { @apply inline-flex size-8 items-center justify-center rounded-full text-stone-dark transition hover:bg-cream-dark hover:text-ink; }
+@utility chip { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium whitespace-nowrap; }
+@utility eyebrow { @apply font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-stone; }
+@utility field { @apply rounded-xl border border-line bg-ivory px-3 py-2 text-ink outline-none transition placeholder:text-stone-light focus:border-gold-dark focus:ring-2 focus:ring-gold/40; }
+@utility num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* Hero glow + floating notes */
+.hero-glow { background: radial-gradient(closest-side, #faf8f2 0%, #f1ede1 45%, transparent 100%); }
+@keyframes float { 50% { transform: translateY(-8px); } }
+.float { animation: float 6s ease-in-out infinite; }
+@keyframes dash { to { stroke-dashoffset: -40; } }
+.flow { stroke-dasharray: 3 17; animation: dash 2.4s linear infinite; }
+
+@keyframes float-up { 0% { transform: translateY(0) rotate(0); opacity: 1; } 100% { transform: translateY(-60vh) rotate(25deg); opacity: 0; } }
+.confetti { position: fixed; bottom: 10vh; font-size: 2rem; animation: float-up 1.6s ease-out forwards; pointer-events: none; z-index: 60; }
+@keyframes word-in { from { opacity: 0; transform: translateY(0.25em); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+.word-in { animation: word-in 0.6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes marquee { to { transform: translateX(calc(-50% - 0.5rem)); } }
+.marquee { animation: marquee 40s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+.marquee-mask { mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent); }
+@media (prefers-reduced-motion: reduce) { .word-in, .marquee, .float, .flow { animation: none; } }

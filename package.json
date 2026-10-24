@@ -1,0 +1,32 @@
+{
+  "name": "refund-sloth",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first multi-agent AI that recovers money from forgotten trials, return windows, warranties and zombie subscriptions.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sloth": "tsx packages/cli/src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "npm run typecheck && npm run build -w @sloth/dashboard",
+    "dev:dashboard": "npm run dev -w @sloth/dashboard",
+    "test": "vitest run",
+    "fixtures": "tsx eval/generate-fixtures.ts",
+    "eval": "tsx eval/run-eval.ts",
+    "demo": "tsx packages/cli/src/index.ts demo"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/pdfkit": "^0.17.7",
+    "pdfkit": "^0.20.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

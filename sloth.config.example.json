@@ -1,0 +1,38 @@
+{
+  "dataDir": "~/RefundSloth",
+  "ollamaHost": "http://127.0.0.1:11434",
+  "profile": "full",
+  "profiles": {
+    "full": {
+      "boss": "qwen3.5:35b",
+      "reader_text": "qwen3.5:35b",
+      "reader_vision": "qwen2.5vl:7b",
+      "deadlineHawk": "qwen3.5:35b",
+      "auditor": "qwen3.5:35b",
+      "ghostwriter": "qwen3.5:35b"
+    },
+    "single": {
+      "boss": "qwen3.5:35b",
+      "reader_text": "qwen3.5:35b",
+      "reader_vision": "qwen3.5:35b",
+      "deadlineHawk": "qwen3.5:35b",
+      "auditor": "qwen3.5:35b",
+      "ghostwriter": "qwen3.5:35b"
+    },
+    "lite": {
+      "boss": "qwen3:8b",
+      "reader_text": "qwen3:8b",
+      "reader_vision": "qwen2.5vl:3b",
+      "deadlineHawk": "qwen3:8b",
+      "auditor": "qwen3:8b",
+      "ghostwriter": "qwen3:8b"
+    }
+  },
+  "schedule": "0 2 * * *",
+  "reminderDaysBefore": [3, 1],
+  "currency": "USD",
+  "user": { "name": "Priya", "email": "priya@example.com" },
+  "ghostwriterTone": "polite",
+  "zombieDays": 60,
+  "dashboardPort": 4747
+}

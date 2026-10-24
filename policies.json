@@ -1,0 +1,16 @@
+{
+  "amazon":   { "returnDays": 30, "warrantyMonths": 12 },
+  "apple":    { "returnDays": 14, "warrantyMonths": 12 },
+  "best buy": { "returnDays": 15, "warrantyMonths": 12 },
+  "target":   { "returnDays": 90 },
+  "walmart":  { "returnDays": 90 },
+  "ikea":     { "returnDays": 365 },
+  "costco":   { "returnDays": 90, "warrantyMonths": 24 },
+  "dell":     { "returnDays": 30, "warrantyMonths": 12 },
+  "netflix":  { "trialDays": 0 },
+  "spotify":  { "trialDays": 30 },
+  "adobe":    { "trialDays": 7 },
+  "audible":  { "trialDays": 30 },
+  "disney+":  { "trialDays": 0 },
+  "_default": { "returnDays": 30, "warrantyMonths": 12, "trialDays": 30 }
+}

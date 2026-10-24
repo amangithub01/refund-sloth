@@ -1,0 +1,61 @@
+From deals@shoes.example Fri Oct  2 10:00:00 2026
+From: ShoeHub <deals@shoes.example>
+To: Priya <priya@example.com>
+Subject: Fall sale: 40% off sneakers 👟
+Date: Fri, 02 Oct 2026 10:00:00 -0700
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Huge savings this weekend only. Shop now and look great.
+
+From no-reply@spotify.example Sat Oct  3 06:00:00 2026
+From: Spotify <no-reply@spotify.example>
+To: Priya <priya@example.com>
+Subject: Your Spotify Premium receipt
+Date: Sat, 03 Oct 2026 06:00:00 -0700
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Thanks for your payment.
+Spotify Premium Individual - monthly subscription
+Amount: $11.99
+Date: Oct 3, 2026
+Next billing date: Nov 3, 2026
+
+From news@blog.example Mon Oct  5 12:00:00 2026
+From: Weekly Dev Digest <news@blog.example>
+To: Priya <priya@example.com>
+Subject: This week in TypeScript
+Date: Mon, 05 Oct 2026 12:00:00 -0700
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Five articles you might like. Happy reading!
+
+From help@nytimes.example Sat Oct 10 07:00:00 2026
+From: The New York Times <help@nytimes.example>
+To: Priya <priya@example.com>
+Subject: Your NYT subscription will renew soon
+Date: Sat, 10 Oct 2026 07:00:00 -0700
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hi Priya,
+Your introductory rate has ended. Your New York Times digital subscription renews monthly at $6.25 starting Nov 10, 2026.
+Manage: help@nytimes.example
+
+From orders@dell.example Fri Sep 25 15:00:00 2026
+From: Dell <orders@dell.example>
+To: Priya <priya@example.com>
+Subject: Dell order confirmation #7781234
+Date: Fri, 25 Sep 2026 15:00:00 -0700
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Thank you for your purchase!
+Order #7781234 placed Sep 25, 2026
+XPS 14 Laptop - $1,299.00
+Includes 1-year limited hardware warranty.
+Returns accepted within 30 days of invoice.
+Support: support@dell.example
+

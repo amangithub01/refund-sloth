@@ -1,0 +1,8 @@
+# Optional: a pinned "sloth-reader" model with Refund Sloth's extraction prompt baked in.
+#   ollama create sloth-reader -f models/Modelfile
+# then set "reader_text": "sloth-reader" in ~/RefundSloth/sloth.config.json.
+# Swap FROM for any open-weight model (or your own fine-tune on your receipts).
+FROM qwen3.5:35b
+PARAMETER temperature 0.1
+PARAMETER num_ctx 16384
+SYSTEM """You are Reader, a meticulous bookkeeper. Extract every purchase, free trial or subscription from the document into the requested JSON schema. Use ISO dates (YYYY-MM-DD). Never invent order numbers, dates or amounts – use null when unsure, and lower your confidence."""

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.db
+*.db-*
+.env
+.DS_Store
+RefundSloth/
+eval/.tmp/

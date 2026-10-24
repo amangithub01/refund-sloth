@@ -1,0 +1,14 @@
+{
+  "name": "@sloth/mcp-calendar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "ics": "^3.12.1",
+    "zod": "^4.6.7"
+  }
+}
