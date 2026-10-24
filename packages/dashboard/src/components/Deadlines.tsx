@@ -1,6 +1,7 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { CalendarPlus, Check, X } from 'lucide-react';
-import { api, money, useDeadlines } from '../api';
+import { api, DEMO, money, useDeadlines } from '../api';
+import { icsDataUrl } from '../demo/ics';
 import { Countdown, Empty, SourceBadge, StoreLink, TYPE_ICON, TYPE_LABEL } from './ui';
 
 function weekLabel(due: string, today: string) {
@@ -39,7 +40,7 @@ export default function Deadlines({ today }: { today: string }) {
                 <Countdown due={d.due_date} today={today} />
                 <div className="flex items-center gap-1">
                   {d.type !== 'warranty_until' && <StoreLink small links={d.links} kind={d.type === 'return_by' ? 'return' : 'cancel'} />}
-                  {d.ics_path && <a className="btn-icon" href={`/api/reminders/${d.id}.ics`} title="Add to calendar"><CalendarPlus size={15} /></a>}
+                  {d.ics_path && <a className="btn-icon" href={DEMO ? icsDataUrl(d) : `/api/reminders/${d.id}.ics`} download={DEMO ? `${d.id}.ics` : undefined} title="Add to calendar"><CalendarPlus size={15} /></a>}
                   <button className="btn-icon" title="Mark done" onClick={() => set(d.id, 'done')}><Check size={15} /></button>
                   <button className="btn-icon" title="Dismiss" onClick={() => set(d.id, 'dismissed')}><X size={15} /></button>
                 </div>

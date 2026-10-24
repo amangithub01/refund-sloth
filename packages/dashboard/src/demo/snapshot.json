@@ -1,0 +1,1404 @@
+{
+ "health": {
+  "ollama": true,
+  "models": [
+   {
+    "name": "qwen3.5:35b",
+    "present": true,
+    "tools": true,
+    "vision": true
+   },
+   {
+    "name": "qwen2.5vl:7b",
+    "present": true,
+    "tools": false,
+    "vision": true
+   }
+  ],
+  "profile": "full",
+  "dataDir": "~/RefundSloth",
+  "running": false,
+  "today": "2026-10-21"
+ },
+ "stats": {
+  "saved_one_time": 0,
+  "saved_monthly": 59.99,
+  "saved_yearly_total": 719.88,
+  "at_risk": 2424.01,
+  "open_deadlines": 15,
+  "urgent_deadlines": 3,
+  "pending_actions": 10,
+  "zombies": 2,
+  "monthly_subscriptions": 173.65,
+  "cuttable_monthly": 86.96,
+  "needs_review": 0,
+  "timeline": [
+   {
+    "day": "2026-10-20",
+    "amount": 59.99,
+    "period": "monthly"
+   }
+  ],
+  "today": "2026-10-21",
+  "urgent_days": 2
+ },
+ "deadlines": [
+  {
+   "id": "dl_jGA0ZVtKxL",
+   "item_id": "item_DoSXa7yAy_",
+   "subscription_id": null,
+   "type": "trial_end",
+   "due_date": "2026-10-23",
+   "amount_at_risk": 7.99,
+   "source": "document",
+   "confidence": 0.95,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_jGA0ZVtKxL.ics",
+   "created_at": "2026-10-20T21:03:29.000Z",
+   "item_merchant": "Peacock",
+   "item_name": "Peacock Premium free trial",
+   "order_number": null,
+   "item_amount": 7.99,
+   "purchase_date": "2026-10-16",
+   "merchant_email": "support@peacocktv.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Peacock",
+   "links": {
+    "cancel": "https://www.peacocktv.com/account/plans"
+   }
+  },
+  {
+   "id": "dl_G_io1PJNHd",
+   "item_id": "item_qk35vtc4gK",
+   "subscription_id": null,
+   "type": "return_by",
+   "due_date": "2026-10-25",
+   "amount_at_risk": 1299,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_G_io1PJNHd.ics",
+   "created_at": "2026-10-21T03:06:53.000Z",
+   "item_merchant": "Dell",
+   "item_name": "XPS 14 Laptop",
+   "order_number": "7781234",
+   "item_amount": 1299,
+   "purchase_date": "2026-09-25",
+   "merchant_email": "orders@dell.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Dell",
+   "links": {
+    "return": "https://www.dell.com/support/order-status/"
+   }
+  },
+  {
+   "id": "dl_us5uCqTBpk",
+   "item_id": "item__iQlRnFml_",
+   "subscription_id": null,
+   "type": "return_by",
+   "due_date": "2026-10-27",
+   "amount_at_risk": 348,
+   "source": "document",
+   "confidence": 0.95,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_us5uCqTBpk.ics",
+   "created_at": "2026-10-21T03:07:08.000Z",
+   "item_merchant": "Best Buy",
+   "item_name": "SONY WH-1000XM5 HEADPHONES",
+   "order_number": "BKY01-806512",
+   "item_amount": 348,
+   "purchase_date": "2026-10-12",
+   "merchant_email": null,
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Best Buy",
+   "links": {
+    "return": "https://www.bestbuy.com/profile/ss/orders"
+   }
+  },
+  {
+   "id": "dl_UNfM0txwtq",
+   "item_id": "item_lWYby80suY",
+   "subscription_id": null,
+   "type": "return_by",
+   "due_date": "2026-10-29",
+   "amount_at_risk": 249,
+   "source": "document",
+   "confidence": 0.95,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_UNfM0txwtq.ics",
+   "created_at": "2026-10-21T03:06:43.000Z",
+   "item_merchant": "Apple Store",
+   "item_name": "AirPods Pro (2nd generation)",
+   "order_number": "W123456789",
+   "item_amount": 249,
+   "purchase_date": "2026-10-15",
+   "merchant_email": "support@apple.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Apple Store",
+   "links": {
+    "cancel": "https://apps.apple.com/account/subscriptions",
+    "return": "https://www.apple.com/shop/order/list"
+   }
+  },
+  {
+   "id": "dl_9Zwy278Vvq",
+   "item_id": "item_zJXbK_qhR6",
+   "subscription_id": null,
+   "type": "trial_end",
+   "due_date": "2026-10-31",
+   "amount_at_risk": 14.95,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_9Zwy278Vvq.ics",
+   "created_at": "2026-10-21T03:06:40.000Z",
+   "item_merchant": "Audible",
+   "item_name": "Audible Premium Plus free trial",
+   "order_number": null,
+   "item_amount": 14.95,
+   "purchase_date": "2026-10-01",
+   "merchant_email": "support@audible.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Audible",
+   "links": {
+    "cancel": "https://www.audible.com/account/overview"
+   }
+  },
+  {
+   "id": "dl_PGOm58dCSH",
+   "item_id": "item_bnMuQhbZqQ",
+   "subscription_id": null,
+   "type": "renewal",
+   "due_date": "2026-11-03",
+   "amount_at_risk": 11.99,
+   "source": "document",
+   "confidence": 0.9,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_PGOm58dCSH.ics",
+   "created_at": "2026-10-21T03:06:53.000Z",
+   "item_merchant": "Spotify",
+   "item_name": "Spotify Premium Individual - monthly subscription",
+   "order_number": null,
+   "item_amount": 11.99,
+   "purchase_date": "2026-10-03",
+   "merchant_email": "no-reply@spotify.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Spotify",
+   "links": {
+    "cancel": "https://www.spotify.com/account/subscription/"
+   }
+  },
+  {
+   "id": "dl_g9cjZzNdAf",
+   "item_id": null,
+   "subscription_id": "sub_KbznEsJkMk",
+   "type": "renewal",
+   "due_date": "2026-11-03",
+   "amount_at_risk": 239.88,
+   "source": "policy",
+   "confidence": 0.75,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_g9cjZzNdAf.ics",
+   "created_at": "2026-10-21T03:07:38.000Z",
+   "item_merchant": null,
+   "item_name": null,
+   "order_number": null,
+   "item_amount": null,
+   "purchase_date": null,
+   "merchant_email": null,
+   "needs_review": null,
+   "sub_merchant": "Adobe Creative Cloud",
+   "monthly_cost": 19.99,
+   "merchant": "Adobe Creative Cloud",
+   "links": {
+    "cancel": "https://account.adobe.com/plans"
+   }
+  },
+  {
+   "id": "dl_5YLcXxPOrr",
+   "item_id": "item_71pJSTYgZG",
+   "subscription_id": null,
+   "type": "return_by",
+   "due_date": "2026-11-04",
+   "amount_at_risk": 159.99,
+   "source": "document",
+   "confidence": 0.95,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_5YLcXxPOrr.ics",
+   "created_at": "2026-10-21T03:06:38.000Z",
+   "item_merchant": "Amazon.com",
+   "item_name": "Kindle Paperwhite (16 GB) - Agave Green",
+   "order_number": "112-1234567-7654321",
+   "item_amount": 159.99,
+   "purchase_date": "2026-10-05",
+   "merchant_email": "cs-reply@amazon.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Amazon.com",
+   "links": {
+    "cancel": "https://www.amazon.com/mc/pipelines/cancellation",
+    "return": "https://www.amazon.com/your-orders/orders"
+   }
+  },
+  {
+   "id": "dl_4jlokxDXUQ",
+   "item_id": "item_MF10fZjTqC",
+   "subscription_id": null,
+   "type": "renewal",
+   "due_date": "2026-11-10",
+   "amount_at_risk": 6.25,
+   "source": "document",
+   "confidence": 0.9,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_4jlokxDXUQ.ics",
+   "created_at": "2026-10-21T03:06:53.000Z",
+   "item_merchant": "The New York Times",
+   "item_name": "NYT digital subscription",
+   "order_number": null,
+   "item_amount": 6.25,
+   "purchase_date": "2026-10-10",
+   "merchant_email": "help@nytimes.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "The New York Times",
+   "links": {
+    "cancel": "https://myaccount.nytimes.com/seg/subscription"
+   }
+  },
+  {
+   "id": "dl_gPRUwmeTIU",
+   "item_id": "item_dBjlzVHB6_",
+   "subscription_id": null,
+   "type": "return_by",
+   "due_date": "2026-12-29",
+   "amount_at_risk": 89.99,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_gPRUwmeTIU.ics",
+   "created_at": "2026-10-21T03:07:13.000Z",
+   "item_merchant": "Target",
+   "item_name": "NINJA AIR FRYER 5QT",
+   "order_number": "2291-0930-7781",
+   "item_amount": 89.99,
+   "purchase_date": "2026-09-30",
+   "merchant_email": null,
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Target",
+   "links": {
+    "return": "https://www.target.com/orders"
+   }
+  },
+  {
+   "id": "dl_FeeflC9tyy",
+   "item_id": "item_zbAO2pJXmO",
+   "subscription_id": null,
+   "type": "return_by",
+   "due_date": "2027-08-01",
+   "amount_at_risk": 199,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_FeeflC9tyy.ics",
+   "created_at": "2026-10-21T03:06:46.000Z",
+   "item_merchant": "IKEA",
+   "item_name": "LAGKAPTEN / ALEX desk, white 140x60 cm",
+   "order_number": "1458822931",
+   "item_amount": 199,
+   "purchase_date": "2026-08-01",
+   "merchant_email": null,
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "IKEA",
+   "links": {
+    "return": "https://www.ikea.com/us/en/customer-service/returns-claims/"
+   }
+  },
+  {
+   "id": "dl_BXhlEU62UG",
+   "item_id": "item_qk35vtc4gK",
+   "subscription_id": null,
+   "type": "warranty_until",
+   "due_date": "2027-09-25",
+   "amount_at_risk": 1299,
+   "source": "document",
+   "confidence": 0.9,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_BXhlEU62UG.ics",
+   "created_at": "2026-10-21T03:06:53.000Z",
+   "item_merchant": "Dell",
+   "item_name": "XPS 14 Laptop",
+   "order_number": "7781234",
+   "item_amount": 1299,
+   "purchase_date": "2026-09-25",
+   "merchant_email": "orders@dell.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Dell",
+   "links": {
+    "return": "https://www.dell.com/support/order-status/"
+   }
+  },
+  {
+   "id": "dl_XPUJl0J5v9",
+   "item_id": "item_71pJSTYgZG",
+   "subscription_id": null,
+   "type": "warranty_until",
+   "due_date": "2027-10-05",
+   "amount_at_risk": 159.99,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_XPUJl0J5v9.ics",
+   "created_at": "2026-10-21T03:06:38.000Z",
+   "item_merchant": "Amazon.com",
+   "item_name": "Kindle Paperwhite (16 GB) - Agave Green",
+   "order_number": "112-1234567-7654321",
+   "item_amount": 159.99,
+   "purchase_date": "2026-10-05",
+   "merchant_email": "cs-reply@amazon.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Amazon.com",
+   "links": {
+    "cancel": "https://www.amazon.com/mc/pipelines/cancellation",
+    "return": "https://www.amazon.com/your-orders/orders"
+   }
+  },
+  {
+   "id": "dl_EedxwXKAiN",
+   "item_id": "item__iQlRnFml_",
+   "subscription_id": null,
+   "type": "warranty_until",
+   "due_date": "2027-10-12",
+   "amount_at_risk": 348,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_EedxwXKAiN.ics",
+   "created_at": "2026-10-21T03:07:08.000Z",
+   "item_merchant": "Best Buy",
+   "item_name": "SONY WH-1000XM5 HEADPHONES",
+   "order_number": "BKY01-806512",
+   "item_amount": 348,
+   "purchase_date": "2026-10-12",
+   "merchant_email": null,
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Best Buy",
+   "links": {
+    "return": "https://www.bestbuy.com/profile/ss/orders"
+   }
+  },
+  {
+   "id": "dl_lUjjj2vjGY",
+   "item_id": "item_lWYby80suY",
+   "subscription_id": null,
+   "type": "warranty_until",
+   "due_date": "2027-10-15",
+   "amount_at_risk": 249,
+   "source": "policy",
+   "confidence": 0.8,
+   "status": "open",
+   "ics_path": "~/RefundSloth/reminders/dl_lUjjj2vjGY.ics",
+   "created_at": "2026-10-21T03:06:43.000Z",
+   "item_merchant": "Apple Store",
+   "item_name": "AirPods Pro (2nd generation)",
+   "order_number": "W123456789",
+   "item_amount": 249,
+   "purchase_date": "2026-10-15",
+   "merchant_email": "support@apple.example",
+   "needs_review": 0,
+   "sub_merchant": null,
+   "monthly_cost": null,
+   "merchant": "Apple Store",
+   "links": {
+    "cancel": "https://apps.apple.com/account/subscriptions",
+    "return": "https://www.apple.com/shop/order/list"
+   }
+  }
+ ],
+ "subs": [
+  {
+   "id": "sub_6qRntyJpie",
+   "merchant": "Planet Fitness",
+   "normalized_name": "PLANET FIT CLUB",
+   "monthly_cost": 24.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-01",
+   "last_charged": "2026-10-01",
+   "charge_count": 13,
+   "last_amount": 24.99,
+   "price_change": 0,
+   "flags": [
+    "zombie"
+   ],
+   "category": "fitness",
+   "reason": "Monthly membership for access to Planet Fitness gym locations and equipment.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://www.planetfitness.com/my-account"
+   }
+  },
+  {
+   "id": "sub_VAihuqSJbA",
+   "merchant": "AI Tool Pro",
+   "normalized_name": "AI TOOL PRO",
+   "monthly_cost": 20,
+   "cadence": "monthly",
+   "first_seen": "2025-10-20",
+   "last_charged": "2026-10-20",
+   "charge_count": 13,
+   "last_amount": 20,
+   "price_change": 0,
+   "flags": [
+    "zombie"
+   ],
+   "category": "software",
+   "reason": "Subscription for accessing advanced artificial intelligence software tools.",
+   "unused": 0,
+   "status": "active",
+   "links": {}
+  },
+  {
+   "id": "sub_KbznEsJkMk",
+   "merchant": "Adobe Creative Cloud",
+   "normalized_name": "ADOBE CREATIVE CLD",
+   "monthly_cost": 19.99,
+   "cadence": "yearly",
+   "first_seen": "2025-11-03",
+   "last_charged": "2025-11-03",
+   "charge_count": 1,
+   "last_amount": 239.88,
+   "price_change": 0,
+   "flags": [],
+   "category": "software",
+   "reason": "Annual subscription providing access to Adobe's creative software suite.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://account.adobe.com/plans"
+   }
+  },
+  {
+   "id": "sub_7KCxDb5BwP",
+   "merchant": "Hulu",
+   "normalized_name": "HULU",
+   "monthly_cost": 17.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-09",
+   "last_charged": "2026-10-09",
+   "charge_count": 13,
+   "last_amount": 17.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "streaming",
+   "reason": "Monthly streaming service for TV shows, movies, and original content.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://secure.hulu.com/account"
+   }
+  },
+  {
+   "id": "sub_G0Tq1ga5s9",
+   "merchant": "Max",
+   "normalized_name": "MAX",
+   "monthly_cost": 16.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-14",
+   "last_charged": "2026-10-14",
+   "charge_count": 13,
+   "last_amount": 16.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "streaming",
+   "reason": "Monthly subscription for streaming premium movies, series, and live sports.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://auth.max.com/subscription"
+   }
+  },
+  {
+   "id": "sub_lTpEhnbZfS",
+   "merchant": "Netflix",
+   "normalized_name": "NETFLIX",
+   "monthly_cost": 15.49,
+   "cadence": "monthly",
+   "first_seen": "2025-10-05",
+   "last_charged": "2026-10-05",
+   "charge_count": 13,
+   "last_amount": 15.49,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "streaming",
+   "reason": "Monthly access to Netflix's extensive library of movies and TV shows.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://www.netflix.com/cancelplan"
+   }
+  },
+  {
+   "id": "sub_3Z3G4zk2Sr",
+   "merchant": "Disney+",
+   "normalized_name": "DISNEY PLUS",
+   "monthly_cost": 13.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-12",
+   "last_charged": "2026-10-12",
+   "charge_count": 13,
+   "last_amount": 13.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "streaming",
+   "reason": "Monthly streaming service featuring Disney, Pixar, Marvel, Star Wars, and National Geographic content.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://www.disneyplus.com/account/subscription"
+   }
+  },
+  {
+   "id": "sub_2e5O_pa3sK",
+   "merchant": "Spotify",
+   "normalized_name": "SPOTIFY",
+   "monthly_cost": 11.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-03",
+   "last_charged": "2026-10-03",
+   "charge_count": 13,
+   "last_amount": 11.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "music",
+   "reason": "Monthly subscription for ad-free music streaming and podcasts.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://www.spotify.com/account/subscription/"
+   }
+  },
+  {
+   "id": "sub_weT9jyu6KJ",
+   "merchant": "Dropbox",
+   "normalized_name": "DROPBOX",
+   "monthly_cost": 11.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-18",
+   "last_charged": "2026-10-18",
+   "charge_count": 13,
+   "last_amount": 11.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "cloud",
+   "reason": "Monthly cloud storage service for file backup, sharing, and collaboration.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://www.dropbox.com/account/plan"
+   }
+  },
+  {
+   "id": "sub_WGAdp5azKY",
+   "merchant": "Apple Music",
+   "normalized_name": "APPLE MUSIC",
+   "monthly_cost": 10.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-07",
+   "last_charged": "2026-10-07",
+   "charge_count": 13,
+   "last_amount": 10.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "music",
+   "reason": "Monthly subscription for streaming music and exclusive artist content.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://apps.apple.com/account/subscriptions"
+   }
+  },
+  {
+   "id": "sub_pyKD_HMB2E",
+   "merchant": "The New York Times",
+   "normalized_name": "NYTIMES NYTDIGITAL",
+   "monthly_cost": 6.25,
+   "cadence": "monthly",
+   "first_seen": "2025-10-10",
+   "last_charged": "2026-10-10",
+   "charge_count": 13,
+   "last_amount": 6.25,
+   "price_change": 2.25,
+   "flags": [
+    "price_increase"
+   ],
+   "category": "news",
+   "reason": "Digital subscription providing unlimited access to The New York Times news articles.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://myaccount.nytimes.com/seg/subscription"
+   }
+  },
+  {
+   "id": "sub_MZRccB42G1",
+   "merchant": "iCloud+",
+   "normalized_name": "APPLE ICLOUD",
+   "monthly_cost": 2.99,
+   "cadence": "monthly",
+   "first_seen": "2025-10-16",
+   "last_charged": "2026-10-16",
+   "charge_count": 13,
+   "last_amount": 2.99,
+   "price_change": 0,
+   "flags": [
+    "duplicate"
+   ],
+   "category": "cloud",
+   "reason": "Monthly cloud storage plan for backing up photos, documents, and device data.",
+   "unused": 0,
+   "status": "active",
+   "links": {
+    "cancel": "https://apps.apple.com/account/subscriptions"
+   }
+  }
+ ],
+ "actions": [
+  {
+   "id": "act_98eLuARx9Y",
+   "deadline_id": "dl_jGA0ZVtKxL",
+   "subscription_id": null,
+   "type": "cancel_email",
+   "title": "Cancel Peacock trial by 2026-10-23",
+   "to_address": "support@peacocktv.example",
+   "subject": "Request to Cancel Peacock Premium Free Trial",
+   "body": "Hello Peacock team,\n\nI am writing to request the immediate cancellation of my Peacock Premium free trial. The trial was initiated on October 16, 2026, for an amount of $7.99, and it is set to convert to a paid plan by the deadline of October 23, 2026.\n\nI would like to ensure no charges are applied after the latest date, as I am cancelling before the two-day window closes. Please confirm in writing that my account has been cancelled and that no future billing will occur.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 7.99,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-20T21:03:31.000Z",
+   "decided_at": null,
+   "merchant": "Peacock",
+   "due_date": "2026-10-23",
+   "deadline_type": "trial_end",
+   "links": {
+    "cancel": "https://www.peacocktv.com/account/plans"
+   }
+  },
+  {
+   "id": "act_4gIUAUN-6m",
+   "deadline_id": "dl_G_io1PJNHd",
+   "subscription_id": null,
+   "type": "return_email",
+   "title": "Return Dell XPS 14 Laptop by 2026-10-25",
+   "to_address": "orders@dell.example",
+   "subject": "Return Request for Order #7781234 - Dell XPS 14 Laptop",
+   "body": "Hello Dell team,\n\nI am writing to request a full refund and return for my Dell XPS 14 Laptop (Order #7781234), purchased on September 25, 2026, for $1299. The item does not meet my expectations, and I would like to initiate the return process immediately to ensure it arrives before the October 25 deadline.\n\nPlease confirm receipt of this request in writing and provide the necessary shipping instructions at your earliest convenience.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 1299,
+   "saving_period": "one_time",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:21.000Z",
+   "decided_at": null,
+   "merchant": "Dell",
+   "due_date": "2026-10-25",
+   "deadline_type": "return_by",
+   "links": {
+    "return": "https://www.dell.com/support/order-status/"
+   }
+  },
+  {
+   "id": "act_ZDZhFw1-9B",
+   "deadline_id": "dl_us5uCqTBpk",
+   "subscription_id": null,
+   "type": "return_email",
+   "title": "Return Best Buy SONY WH-1000XM5 HEADPHONES by 2026-10-27",
+   "to_address": null,
+   "subject": "Return Request for Order BKY01-806512 - SONY WH-1000XM5 Headphones",
+   "body": "Hello Best Buy team,\n\nI am writing to request a full refund and return for my SONY WH-1000XM5 headphones purchased on October 12, 2026. The order number is BKY01-806512, with a total amount of $348.\n\nAs the return deadline falls on October 27, 2026, I would like to initiate this process immediately to ensure compliance with your policy. Please confirm receipt of this request and provide the necessary shipping instructions in writing at your earliest convenience.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 348,
+   "saving_period": "one_time",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:24.000Z",
+   "decided_at": null,
+   "merchant": "Best Buy",
+   "due_date": "2026-10-27",
+   "deadline_type": "return_by",
+   "links": {
+    "return": "https://www.bestbuy.com/profile/ss/orders"
+   }
+  },
+  {
+   "id": "act_0kh8s38PnX",
+   "deadline_id": "dl_UNfM0txwtq",
+   "subscription_id": null,
+   "type": "return_email",
+   "title": "Return Apple Store AirPods Pro (2nd generation) by 2026-10-29",
+   "to_address": "support@apple.example",
+   "subject": "Return Request for Order W123456789 - AirPods Pro (2nd generation)",
+   "body": "Hello Apple Store team,\n\nI am writing to request a full refund and return for my order of the AirPods Pro (2nd generation). The purchase was made on October 15, 2026, for $249.00 under order number W123456789.\n\nAs this transaction falls within your 14-day return window, I am submitting this request before the deadline of October 29, 2026. Please confirm receipt of this email and provide the necessary shipping instructions for the return at your earliest convenience.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 249,
+   "saving_period": "one_time",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:27.000Z",
+   "decided_at": null,
+   "merchant": "Apple Store",
+   "due_date": "2026-10-29",
+   "deadline_type": "return_by",
+   "links": {
+    "cancel": "https://apps.apple.com/account/subscriptions",
+    "return": "https://www.apple.com/shop/order/list"
+   }
+  },
+  {
+   "id": "act_jh97q7F-l2",
+   "deadline_id": "dl_9Zwy278Vvq",
+   "subscription_id": null,
+   "type": "cancel_email",
+   "title": "Cancel Audible trial by 2026-10-31",
+   "to_address": "support@audible.example",
+   "subject": "Request to Cancel Audible Premium Plus Free Trial",
+   "body": "Hello Audible team,\n\nI am writing to request the immediate cancellation of my Audible Premium Plus free trial. Although the merchant is listed as Audible, please process this cancellation for order number null, purchased on 2026-10-01 with an amount of $14.95, before the deadline of 2026-10-31 to prevent any charges from being applied to my account.\n\nI would appreciate your prompt confirmation in writing that this cancellation has been processed successfully.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 14.95,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:29.000Z",
+   "decided_at": null,
+   "merchant": "Audible",
+   "due_date": "2026-10-31",
+   "deadline_type": "trial_end",
+   "links": {
+    "cancel": "https://www.audible.com/account/overview"
+   }
+  },
+  {
+   "id": "act_f2AqEFAUkT",
+   "deadline_id": null,
+   "subscription_id": "sub_6qRntyJpie",
+   "type": "cancel_email",
+   "title": "Cancel Planet Fitness (no sign you've used Planet Fitness in 60+ days)",
+   "to_address": null,
+   "subject": "Cancellation Request for Monthly Subscription",
+   "body": "Hello Planet Fitness team,\n\nI am writing to request the cancellation of my monthly subscription effective at the end of the current billing period. My last charge was $24.99 on October 1, 2026, and I expect no further charges to be processed after this date.\n\nPlease confirm in writing that my account will be closed accordingly.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 24.99,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:31.000Z",
+   "decided_at": null,
+   "merchant": "Planet Fitness",
+   "due_date": null,
+   "deadline_type": null,
+   "links": {
+    "cancel": "https://www.planetfitness.com/my-account"
+   }
+  },
+  {
+   "id": "act_wwdv1e1rWh",
+   "deadline_id": null,
+   "subscription_id": "sub_VAihuqSJbA",
+   "type": "cancel_email",
+   "title": "Cancel AI Tool Pro (no sign you've used AI Tool Pro in 60+ days)",
+   "to_address": null,
+   "subject": "Cancellation Request for AI Tool Pro Subscription",
+   "body": "Hello AI Tool Pro team,\n\nI am writing to request the cancellation of my AI Tool Pro subscription. Please ensure this is effective at the end of the current billing period so that no further charges are applied to my account after the last charge on October 20, 2026, for $20.00.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 20,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:33.000Z",
+   "decided_at": null,
+   "merchant": "AI Tool Pro",
+   "due_date": null,
+   "deadline_type": null,
+   "links": {}
+  },
+  {
+   "id": "act_MT23lrelU0",
+   "deadline_id": null,
+   "subscription_id": "sub_7KCxDb5BwP",
+   "type": "cancel_email",
+   "title": "Cancel Hulu (you pay for 4 streaming services (Hulu, Max, Netflix, Disney+))",
+   "to_address": null,
+   "subject": "Cancellation Request for Monthly Hulu Subscription",
+   "body": "Hello Hulu team,\n\nI am writing to request the cancellation of my monthly subscription effective at the end of the current billing period. My last charge was $17.99 on October 9, 2026, and I would like to ensure no further charges are applied after this cycle concludes.\n\nPlease confirm in writing that my account will be set to expire automatically without any additional fees.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 17.99,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:35.000Z",
+   "decided_at": null,
+   "merchant": "Hulu",
+   "due_date": null,
+   "deadline_type": null,
+   "links": {
+    "cancel": "https://secure.hulu.com/account"
+   }
+  },
+  {
+   "id": "act_g5RDP3Pf1e",
+   "deadline_id": null,
+   "subscription_id": "sub_2e5O_pa3sK",
+   "type": "cancel_email",
+   "title": "Cancel Spotify (you pay for 2 music services (Spotify, Apple Music))",
+   "to_address": null,
+   "subject": "Cancellation Request for Spotify Subscription",
+   "body": "Hello Spotify team,\n\nI am writing to request the cancellation of my monthly subscription effective at the end of the current billing period. My last charge was $11.99 on October 3, 2026, and I would like to ensure no further charges are applied after this cycle concludes.\n\nPlease confirm in writing that my account will be set to expire automatically without any additional fees.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 11.99,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:36.000Z",
+   "decided_at": null,
+   "merchant": "Spotify",
+   "due_date": null,
+   "deadline_type": null,
+   "links": {
+    "cancel": "https://www.spotify.com/account/subscription/"
+   }
+  },
+  {
+   "id": "act_5pzqanN6lR",
+   "deadline_id": null,
+   "subscription_id": "sub_weT9jyu6KJ",
+   "type": "cancel_email",
+   "title": "Cancel Dropbox (you pay for 2 cloud services (Dropbox, iCloud+))",
+   "to_address": null,
+   "subject": "Cancellation Request for Dropbox Subscription",
+   "body": "Hello Dropbox team,\n\nI am writing to request the cancellation of my Dropbox subscription. Please ensure this is effective at the end of the current billing period so that no further charges are applied to my account.\n\nThank you,\nPriya\npriya@example.com",
+   "potential_saving": 11.99,
+   "saving_period": "monthly",
+   "status": "pending",
+   "snooze_until": null,
+   "created_at": "2026-10-21T03:24:38.000Z",
+   "decided_at": null,
+   "merchant": "Dropbox",
+   "due_date": null,
+   "deadline_type": null,
+   "links": {
+    "cancel": "https://www.dropbox.com/account/plan"
+   }
+  }
+ ],
+ "review": [],
+ "brief": {
+  "headline": "\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready",
+  "second_line": "Most urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).",
+  "markdown": "# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\n\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\n\nMost urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\n\n## \u26a0\ufe0f Urgent (next 7 days)\n- \u23f3 **Peacock** \u2013 Peacock Premium free trial: trial end **2026-10-23** \u00b7 $7.99\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\n\n## \ud83d\udcc5 This month\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\n\n## \ud83e\udddf Subscriptions worth a look\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\n\n## \ud83d\udc40 Needs a look\n- Nothing.\n\n## \ud83d\udcb0 Scoreboard\n- Saved so far: **$0** one-time + **$59.99/mo** (\u2248 $719.88/yr)\n- At risk in the next 30 days: **$2424.01**\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\n\n## \ud83e\udda5 Sloth Boss's take\n- Dell XPS 14 return due Oct 25 for $1,299 refund\n- Sony headphones return due Oct 27 for $348 refund\n- Cut Planet Fitness ($24.99) and AI Tool Pro ($20)\n- Review duplicates: Hulu, Max, Netflix, Disney+, Spotify\n- NYT price increased from $6.25 to $8.50\n- All items processed with high confidence\n",
+  "finished_at": "2026-10-21T04:01:47.000Z"
+ },
+ "runs": [
+  {
+   "id": "run_8wpYA-d8",
+   "started_at": "2026-10-21T04:01:07.000Z",
+   "finished_at": "2026-10-21T04:01:47.000Z",
+   "status": "done",
+   "files_processed": 0,
+   "brief": "{\"headline\":\"\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready\",\"second_line\":\"Most urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\",\"markdown\":\"# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\\n\\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\\n\\nMost urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\\n\\n## \u26a0\ufe0f Urgent (next 7 days)\\n- \u23f3 **Peacock** \u2013 Peacock Premium free trial: trial end **2026-10-23** \u00b7 $7.99\\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\\n\\n## \ud83d\udcc5 This month\\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\\n\\n## \ud83e\udddf Subscriptions worth a look\\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\\n\\n## \ud83d\udc40 Needs a look\\n- Nothing.\\n\\n## \ud83d\udcb0 Scoreboard\\n- Saved so far: **$0** one-time + **$59.99/mo** (\u2248 $719.88/yr)\\n- At risk in the next 30 days: **$2424.01**\\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\\n\\n## \ud83e\udda5 Sloth Boss's take\\n- Dell XPS 14 return due Oct 25 for $1,299 refund\\n- Sony headphones return due Oct 27 for $348 refund\\n- Cut Planet Fitness ($24.99) and AI Tool Pro ($20)\\n- Review duplicates: Hulu, Max, Netflix, Disney+, Spotify\\n- NYT price increased from $6.25 to $8.50\\n- All items processed with high confidence\\n\"}"
+  },
+  {
+   "id": "run_eXRAYkkK",
+   "started_at": "2026-10-21T03:18:32.000Z",
+   "finished_at": "2026-10-21T03:23:33.000Z",
+   "status": "failed",
+   "files_processed": 0,
+   "brief": null
+  },
+  {
+   "id": "run_9J9es1iH",
+   "started_at": "2026-10-21T03:01:30.000Z",
+   "finished_at": "2026-10-21T03:12:41.000Z",
+   "status": "failed",
+   "files_processed": 0,
+   "brief": null
+  },
+  {
+   "id": "run_Sy7TbsiS",
+   "started_at": "2026-10-20T21:02:50.000Z",
+   "finished_at": "2026-10-20T21:03:49.000Z",
+   "status": "done",
+   "files_processed": 1,
+   "brief": "{\"headline\":\"\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready\",\"second_line\":\"Most urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\",\"markdown\":\"# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\\n\\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\\n\\nMost urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\\n\\n## \u26a0\ufe0f Urgent (next 7 days)\\n- \u23f3 **Peacock** \u2013 Peacock Premium free trial: trial end **2026-10-23** \u00b7 $7.99\\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\\n\\n## \ud83d\udcc5 This month\\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\\n\\n## \ud83e\udddf Subscriptions worth a look\\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\\n\\n## \ud83d\udc40 Needs a look\\n- Nothing.\\n\\n## \ud83d\udcb0 Scoreboard\\n- Saved so far: **$0** one-time + **$59.99/mo** (\u2248 $719.88/yr)\\n- At risk in the next 30 days: **$2424.01**\\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\\n\\n## \ud83e\udda5 Sloth Boss's take\\n- Cancel Peacock Premium before Oct 23 to avoid the $7.99 charge.\\n- Return Dell XPS 14 by Oct 25 or risk losing $1,299.\\n- Return Sony headphones by Oct 27 to keep your $348.\\n- Cut Planet Fitness and AI Tool Pro for $44.99 monthly savings.\\n- Review streaming duplicates like Hulu, Max, and Netflix.\\n- Check Adobe Creative Cloud renewal on Nov 3 ($239.88).\\n\"}"
+  },
+  {
+   "id": "run_Or3VMsab",
+   "started_at": "2026-10-20T20:18:29.000Z",
+   "finished_at": "2026-10-20T20:19:07.000Z",
+   "status": "done",
+   "files_processed": 0,
+   "brief": "{\"headline\":\"\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready\",\"second_line\":\"Most urgent: \u23f3 Adobe Creative Cloud All Apps \u2013 trial end 2026-10-25 ($59.99 at stake).\",\"markdown\":\"# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\\n\\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\\n\\nMost urgent: \u23f3 Adobe Creative Cloud All Apps \u2013 trial end 2026-10-25 ($59.99 at stake).\\n\\n## \u26a0\ufe0f Urgent (next 7 days)\\n- \u23f3 **Adobe** \u2013 Creative Cloud All Apps: trial end **2026-10-25** \u00b7 $59.99\\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\\n\\n## \ud83d\udcc5 This month\\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\\n\\n## \ud83e\udddf Subscriptions worth a look\\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\\n\\n## \ud83d\udc40 Needs a look\\n- Nothing.\\n\\n## \ud83d\udcb0 Scoreboard\\n- Saved so far: **$0** one-time + **$0/mo** (\u2248 $0/yr)\\n- At risk in the next 30 days: **$2476.01**\\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\\n\\n## \ud83e\udda5 Sloth Boss's take\\n- Dell XPS 14 return due Oct 25 ($1,299.00 risk)\\n- Best Buy SONY headphones return due Oct 27 ($348.00 risk)\\n- Cancel Planet Fitness and AI Tool Pro to save $44.99/mo\\n- Review streaming stack for duplicates like Hulu and Max\\n- Check NYT price increase of $2.25\\n- All items have high confidence scores\\n\"}"
+  },
+  {
+   "id": "run_A9Y-Ypkf",
+   "started_at": "2026-10-20T20:00:00.000Z",
+   "finished_at": "2026-10-20T20:00:14.000Z",
+   "status": "done",
+   "files_processed": 0,
+   "brief": "{\"headline\":\"\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready\",\"second_line\":\"Most urgent: \u23f3 Adobe Creative Cloud All Apps \u2013 trial end 2026-10-25 ($59.99 at stake).\",\"markdown\":\"# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\\n\\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\\n\\nMost urgent: \u23f3 Adobe Creative Cloud All Apps \u2013 trial end 2026-10-25 ($59.99 at stake).\\n\\n## \u26a0\ufe0f Urgent (next 7 days)\\n- \u23f3 **Adobe** \u2013 Creative Cloud All Apps: trial end **2026-10-25** \u00b7 $59.99\\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\\n\\n## \ud83d\udcc5 This month\\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\\n\\n## \ud83e\udddf Subscriptions worth a look\\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\\n\\n## \ud83d\udc40 Needs a look\\n- Nothing.\\n\\n## \ud83d\udcb0 Scoreboard\\n- Saved so far: **$0** one-time + **$0/mo** (\u2248 $0/yr)\\n- At risk in the next 30 days: **$2476.01**\\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\\n\\n## \ud83e\udda5 Sloth Boss's take\\n- Dell XPS 14 return due Oct 25 ($1,299 at risk)\\n- Best Buy SONY Headphones return due Oct 27 ($348 at risk)\\n- Cancel Planet Fitness ($24.99) or AI Tool Pro ($20) to save $44.99\\n- Pause one streaming service (Hulu/Max/Netflix/etc.) to save ~$15\u2013$18\\n- Review NYT price hike from $6.25 to $8.50\\n\"}"
+  },
+  {
+   "id": "run_YVAv_p8Q",
+   "started_at": "2026-10-20T19:59:00.000Z",
+   "finished_at": "2026-10-20T19:59:20.000Z",
+   "status": "done",
+   "files_processed": 0,
+   "brief": "{\"headline\":\"\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready\",\"second_line\":\"Most urgent: \u23f3 Adobe Creative Cloud All Apps \u2013 trial end 2026-10-25 ($59.99 at stake).\",\"markdown\":\"# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\\n\\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\\n\\nMost urgent: \u23f3 Adobe Creative Cloud All Apps \u2013 trial end 2026-10-25 ($59.99 at stake).\\n\\n## \u26a0\ufe0f Urgent (next 7 days)\\n- \u23f3 **Adobe** \u2013 Creative Cloud All Apps: trial end **2026-10-25** \u00b7 $59.99\\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\\n\\n## \ud83d\udcc5 This month\\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\\n\\n## \ud83e\udddf Subscriptions worth a look\\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\\n\\n## \ud83d\udc40 Needs a look\\n- Nothing.\\n\\n## \ud83d\udcb0 Scoreboard\\n- Saved so far: **$0** one-time + **$0/mo** (\u2248 $0/yr)\\n- At risk in the next 30 days: **$2476.01**\\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\\n\\n## \ud83e\udda5 Sloth Boss's take\\n- Dell XPS 14 return due Oct 25 ($1,299.00)\\n- Best Buy SONY headphones return due Oct 27 ($348.00)\\n- Cancel Adobe trial by Oct 25 to avoid $59.99 charge\\n- Cut Planet Fitness and AI Tool Pro for $44.99/mo savings\\n- Review NYT price increase of $6.25/mo\\n- All extractions passed confidence checks\\n\"}"
+  }
+ ],
+ "events": [
+  {
+   "type": "log",
+   "agent": "system",
+   "message": "scheduler armed: \"0 2 * * *\"",
+   "ts": "2026-10-23T21:01:35.431Z"
+  },
+  {
+   "type": "log",
+   "agent": "system",
+   "message": "MCP hub connected: filesystem, ledger, notify, calendar, mail, docs (33 tools)",
+   "ts": "2026-10-23T21:02:50.747Z"
+  },
+  {
+   "type": "run.start",
+   "agent": "boss",
+   "message": "waking up the team\u2026 \ud83e\udda5",
+   "data": {
+    "run_id": "run_Sy7TbsiS"
+   },
+   "ts": "2026-10-23T21:02:50.748Z"
+  },
+  {
+   "type": "agent.start",
+   "agent": "scout",
+   "message": "sniffing around the inbox\u2026",
+   "ts": "2026-10-23T21:02:50.753Z"
+  },
+  {
+   "type": "log",
+   "agent": "scout",
+   "message": "filesystem MCP sees 11 file(s) in the inbox",
+   "ts": "2026-10-23T21:02:50.760Z"
+  },
+  {
+   "type": "agent.end",
+   "agent": "scout",
+   "message": "found 1 new file(s) (10 already known)",
+   "data": {
+    "count": 1
+   },
+   "ts": "2026-10-23T21:02:50.778Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "reader",
+   "message": "llm qwen3.5:35b 38596ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 38596,
+    "ok": true
+   },
+   "ts": "2026-10-23T21:03:29.404Z"
+  },
+  {
+   "type": "log",
+   "agent": "reader",
+   "message": "Your Peacock Premium free trial ends soo \u2192 Peacock \u00b7 Peacock Premium free trial \u00b7 $7.99 (0.95)",
+   "data": {
+    "item_id": "item_DoSXa7yAy_",
+    "merchant": "Peacock"
+   },
+   "ts": "2026-10-23T21:03:29.413Z"
+  },
+  {
+   "type": "file.processed",
+   "agent": "reader",
+   "message": "peacock_trial.eml: 1 item(s)",
+   "data": {
+    "file": "peacock_trial.eml",
+    "items": 1
+   },
+   "ts": "2026-10-23T21:03:29.414Z"
+  },
+  {
+   "type": "log",
+   "agent": "hawk",
+   "message": "Peacock: \u23f3 trial_end 2026-10-23 ($7.99)",
+   "ts": "2026-10-23T21:03:29.429Z"
+  },
+  {
+   "type": "agent.start",
+   "agent": "ghost",
+   "message": "looking for things worth writing about\u2026",
+   "ts": "2026-10-23T21:03:29.430Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "ghost",
+   "message": "llm qwen3.5:35b 2059ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 2059,
+    "ok": true
+   },
+   "ts": "2026-10-23T21:03:31.492Z"
+  },
+  {
+   "type": "action.queued",
+   "agent": "ghost",
+   "message": "\u270d\ufe0f  drafted \"Cancel Peacock trial by 2026-10-23\" \u2013 saves $7.99/mo",
+   "data": {
+    "action_id": "act_98eLuARx9Y"
+   },
+   "ts": "2026-10-23T21:03:31.495Z"
+  },
+  {
+   "type": "agent.end",
+   "agent": "ghost",
+   "message": "1 new draft(s) waiting for your approval",
+   "data": {
+    "count": 1
+   },
+   "ts": "2026-10-23T21:03:31.497Z"
+  },
+  {
+   "type": "agent.start",
+   "agent": "boss",
+   "message": "reviewing the team's work\u2026",
+   "ts": "2026-10-23T21:03:31.497Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "boss",
+   "message": "llm qwen3.5:35b 1713ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 1713,
+    "ok": true
+   },
+   "ts": "2026-10-23T21:03:33.213Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_stats({})",
+   "data": {
+    "tool": "ledger_stats"
+   },
+   "ts": "2026-10-23T21:03:33.213Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_upcoming({\"days\":14})",
+   "data": {
+    "tool": "ledger_upcoming"
+   },
+   "ts": "2026-10-23T21:03:33.214Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_list({\"entity\":\"subscriptions\"})",
+   "data": {
+    "tool": "ledger_list"
+   },
+   "ts": "2026-10-23T21:03:33.214Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_list({\"entity\":\"items\",\"needs_review\":true})",
+   "data": {
+    "tool": "ledger_list"
+   },
+   "ts": "2026-10-23T21:03:33.215Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "boss",
+   "message": "llm qwen3.5:35b 6282ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 6282,
+    "ok": true
+   },
+   "ts": "2026-10-23T21:03:39.497Z"
+  },
+  {
+   "type": "log",
+   "agent": "boss",
+   "message": "reviewed the ledger with 4 tool call(s)",
+   "ts": "2026-10-23T21:03:39.497Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "boss",
+   "message": "llm qwen3.5:35b 3489ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 3490,
+    "ok": true
+   },
+   "ts": "2026-10-23T21:03:42.988Z"
+  },
+  {
+   "type": "log",
+   "agent": "boss",
+   "message": "urgent alert sent for 1 deadline(s)",
+   "data": {
+    "ids": [
+     "dl_jGA0ZVtKxL"
+    ]
+   },
+   "ts": "2026-10-23T21:03:49.028Z"
+  },
+  {
+   "type": "agent.end",
+   "agent": "boss",
+   "message": "brief written \u2192 ~/RefundSloth/reports/2026-10-21.md",
+   "data": {
+    "headline": "\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready"
+   },
+   "ts": "2026-10-23T21:03:49.028Z"
+  },
+  {
+   "type": "run.end",
+   "agent": "boss",
+   "message": "done in 58s \u2013 \ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready",
+   "data": {
+    "run_id": "run_Sy7TbsiS",
+    "summary": {
+     "files": 1,
+     "items": 1,
+     "deadlines": 1,
+     "subscriptions": 0,
+     "drafts": 1,
+     "failed": 0
+    },
+    "brief": {
+     "headline": "\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready",
+     "second_line": "Most urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).",
+     "markdown": "# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\n\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\n\nMost urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\n\n## \u26a0\ufe0f Urgent (next 7 days)\n- \u23f3 **Peacock** \u2013 Peacock Premium free trial: trial end **2026-10-23** \u00b7 $7.99\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\n\n## \ud83d\udcc5 This month\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\n\n## \ud83e\udddf Subscriptions worth a look\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\n\n## \ud83d\udc40 Needs a look\n- Nothing.\n\n## \ud83d\udcb0 Scoreboard\n- Saved so far: **$0** one-time + **$59.99/mo** (\u2248 $719.88/yr)\n- At risk in the next 30 days: **$2424.01**\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\n\n## \ud83e\udda5 Sloth Boss's take\n- Cancel Peacock Premium before Oct 23 to avoid the $7.99 charge.\n- Return Dell XPS 14 by Oct 25 or risk losing $1,299.\n- Return Sony headphones by Oct 27 to keep your $348.\n- Cut Planet Fitness and AI Tool Pro for $44.99 monthly savings.\n- Review streaming duplicates like Hulu, Max, and Netflix.\n- Check Adobe Creative Cloud renewal on Nov 3 ($239.88).\n"
+    },
+    "secs": 58
+   },
+   "ts": "2026-10-23T21:03:49.029Z"
+  },
+  {
+   "type": "log",
+   "agent": "system",
+   "message": "MCP hub connected: filesystem, ledger, calendar, notify, mail, docs (33 tools)",
+   "ts": "2026-10-24T04:01:07.660Z"
+  },
+  {
+   "type": "run.start",
+   "agent": "boss",
+   "message": "waking up the team\u2026 \ud83e\udda5",
+   "data": {
+    "run_id": "run_8wpYA-d8"
+   },
+   "ts": "2026-10-24T04:01:07.660Z"
+  },
+  {
+   "type": "agent.start",
+   "agent": "scout",
+   "message": "sniffing around the inbox\u2026",
+   "ts": "2026-10-24T04:01:07.668Z"
+  },
+  {
+   "type": "log",
+   "agent": "scout",
+   "message": "filesystem MCP sees 11 file(s) in the inbox",
+   "ts": "2026-10-24T04:01:07.675Z"
+  },
+  {
+   "type": "agent.end",
+   "agent": "scout",
+   "message": "found 0 new file(s) (11 already known)",
+   "data": {
+    "count": 0
+   },
+   "ts": "2026-10-24T04:01:07.696Z"
+  },
+  {
+   "type": "agent.start",
+   "agent": "ghost",
+   "message": "looking for things worth writing about\u2026",
+   "ts": "2026-10-24T04:01:07.696Z"
+  },
+  {
+   "type": "agent.end",
+   "agent": "ghost",
+   "message": "0 new draft(s) waiting for your approval",
+   "data": {
+    "count": 0
+   },
+   "ts": "2026-10-24T04:01:07.702Z"
+  },
+  {
+   "type": "agent.start",
+   "agent": "boss",
+   "message": "reviewing the team's work\u2026",
+   "ts": "2026-10-24T04:01:07.702Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "boss",
+   "message": "llm qwen3.5:35b 24155ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 24156,
+    "ok": true
+   },
+   "ts": "2026-10-24T04:01:31.860Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_stats({})",
+   "data": {
+    "tool": "ledger_stats"
+   },
+   "ts": "2026-10-24T04:01:31.860Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_upcoming({\"days\":14})",
+   "data": {
+    "tool": "ledger_upcoming"
+   },
+   "ts": "2026-10-24T04:01:31.885Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_list({\"entity\":\"subscriptions\"})",
+   "data": {
+    "tool": "ledger_list"
+   },
+   "ts": "2026-10-24T04:01:31.886Z"
+  },
+  {
+   "type": "agent.tool",
+   "agent": "boss",
+   "message": "\u2192 ledger_list({\"entity\":\"items\",\"needs_review\":true})",
+   "data": {
+    "tool": "ledger_list"
+   },
+   "ts": "2026-10-24T04:01:31.886Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "boss",
+   "message": "llm qwen3.5:35b 6226ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 6227,
+    "ok": true
+   },
+   "ts": "2026-10-24T04:01:38.113Z"
+  },
+  {
+   "type": "log",
+   "agent": "boss",
+   "message": "reviewed the ledger with 4 tool call(s)",
+   "ts": "2026-10-24T04:01:38.113Z"
+  },
+  {
+   "type": "llm.call",
+   "agent": "boss",
+   "message": "llm qwen3.5:35b 3335ms",
+   "data": {
+    "model": "qwen3.5:35b",
+    "ms": 3335,
+    "ok": true
+   },
+   "ts": "2026-10-24T04:01:41.450Z"
+  },
+  {
+   "type": "log",
+   "agent": "boss",
+   "message": "urgent alert sent for 1 deadline(s)",
+   "data": {
+    "ids": [
+     "dl_jGA0ZVtKxL"
+    ]
+   },
+   "ts": "2026-10-24T04:01:47.508Z"
+  },
+  {
+   "type": "agent.end",
+   "agent": "boss",
+   "message": "brief written \u2192 ~/RefundSloth/reports/2026-10-21.md",
+   "data": {
+    "headline": "\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready"
+   },
+   "ts": "2026-10-24T04:01:47.509Z"
+  },
+  {
+   "type": "run.end",
+   "agent": "boss",
+   "message": "done in 40s \u2013 \ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready",
+   "data": {
+    "run_id": "run_8wpYA-d8",
+    "summary": {
+     "files": 0,
+     "items": 0,
+     "deadlines": 0,
+     "subscriptions": 0,
+     "drafts": 0,
+     "failed": 0
+    },
+    "brief": {
+     "headline": "\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready",
+     "second_line": "Most urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).",
+     "markdown": "# \ud83e\udda5 Refund Sloth \u2013 morning brief 2026-10-21\n\n**\ud83e\udda5 3 deadlines this week \u00b7 $86.96/mo you can cut \u00b7 10 drafts ready**\n\nMost urgent: \u23f3 Peacock Peacock Premium free trial \u2013 trial end 2026-10-23 ($7.99 at stake).\n\n## \u26a0\ufe0f Urgent (next 7 days)\n- \u23f3 **Peacock** \u2013 Peacock Premium free trial: trial end **2026-10-23** \u00b7 $7.99\n- \ud83d\uded2 **Dell** \u2013 XPS 14 Laptop: return by **2026-10-25** \u00b7 $1299\n- \ud83d\uded2 **Best Buy** \u2013 SONY WH-1000XM5 HEADPHONES: return by **2026-10-27** \u00b7 $348\n\n## \ud83d\udcc5 This month\n- \ud83d\uded2 **Apple Store** \u2013 AirPods Pro (2nd generation): return by **2026-10-29** \u00b7 $249\n- \u23f3 **Audible** \u2013 Audible Premium Plus free trial: trial end **2026-10-31** \u00b7 $14.95\n- \ud83d\udd01 **Spotify** \u2013 Spotify Premium Individual - monthly subscription: renewal **2026-11-03** \u00b7 $11.99\n- \ud83d\udd01 **Adobe Creative Cloud**: renewal **2026-11-03** \u00b7 $239.88\n- \ud83d\uded2 **Amazon.com** \u2013 Kindle Paperwhite (16 GB) - Agave Green: return by **2026-11-04** \u00b7 $159.99\n- \ud83d\udd01 **The New York Times** \u2013 NYT digital subscription: renewal **2026-11-10** \u00b7 $6.25\n\n## \ud83e\udddf Subscriptions worth a look\n- **Planet Fitness** $24.99/mo \u2013 \ud83e\udddf looks unused\n- **AI Tool Pro** $20/mo \u2013 \ud83e\udddf looks unused\n- **Hulu** $17.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Max** $16.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Netflix** $15.49/mo \u2013 \ud83d\udc6f overlaps with others\n- **Disney+** $13.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Spotify** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Dropbox** $11.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **Apple Music** $10.99/mo \u2013 \ud83d\udc6f overlaps with others\n- **The New York Times** $6.25/mo \u2013 \ud83d\udcc8 price went up $2.25\n- **iCloud+** $2.99/mo \u2013 \ud83d\udc6f overlaps with others\n\n## \ud83d\udc40 Needs a look\n- Nothing.\n\n## \ud83d\udcb0 Scoreboard\n- Saved so far: **$0** one-time + **$59.99/mo** (\u2248 $719.88/yr)\n- At risk in the next 30 days: **$2424.01**\n- Drafts waiting for you: **10** \u2192 http://localhost:4747\n\n## \ud83e\udda5 Sloth Boss's take\n- Dell XPS 14 return due Oct 25 for $1,299 refund\n- Sony headphones return due Oct 27 for $348 refund\n- Cut Planet Fitness ($24.99) and AI Tool Pro ($20)\n- Review duplicates: Hulu, Max, Netflix, Disney+, Spotify\n- NYT price increased from $6.25 to $8.50\n- All items processed with high confidence\n"
+    },
+    "secs": 40
+   },
+   "ts": "2026-10-24T04:01:47.514Z"
+  }
+ ]
+}

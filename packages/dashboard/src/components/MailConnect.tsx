@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { Lock, Mail, RefreshCw, X } from 'lucide-react';
-import { api, useMail, type MailStatus } from '../api';
+import { api, DEMO, useMail, type MailStatus } from '../api';
 
 /** Connect a mailbox (read-only IMAP + app password stored in the OS secret store). */
 export default function MailConnect({ onClose }: { onClose: () => void }) {
@@ -41,6 +41,7 @@ export default function MailConnect({ onClose }: { onClose: () => void }) {
           The emails are read by your local model, not a cloud AI.
         </p>
 
+        {DEMO && <p className="mt-3 rounded-xl bg-gold/30 px-4 py-2 text-xs">Demo site: connecting mail is turned off here. Install Refund Sloth locally to read your own inbox.</p>}
         {mail?.connected ? (
           <div className="mt-5 space-y-4">
             <div className="flex items-center gap-3 rounded-xl bg-paper px-4 py-3">

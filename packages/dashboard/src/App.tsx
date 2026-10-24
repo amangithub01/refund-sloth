@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { ArrowRight, Mail, ScrollText, Search } from 'lucide-react';
-import { api, useEvents, useHealth, useMail, useStats } from './api';
+import { api, DEMO, useEvents, useHealth, useMail, useStats } from './api';
 import UrgentBanner from './components/UrgentBanner';
 import MailConnect from './components/MailConnect';
 import Today from './components/Today';
@@ -62,6 +62,12 @@ export default function App() {
           </div>
         </div>
       </header>
+      {DEMO && (
+        <div className="border-b border-line bg-gold/30 px-5 py-2 text-center text-xs text-ink">
+          🦥 Live demo with sample data · approvals and edits stay in this tab · the real agents run on your own machine.{' '}
+          <a className="font-medium underline" href="https://github.com/amangithub01/refund-sloth#setup" target="_blank" rel="noopener noreferrer">Install it</a>
+        </div>
+      )}
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-5 pt-6">
         {health && (
           <span className={`chip border ${health.ollama ? 'border-line bg-ivory text-stone-dark' : 'border-negative/30 bg-negative-soft/40 text-negative'}`}>

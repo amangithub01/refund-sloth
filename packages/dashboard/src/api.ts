@@ -28,7 +28,12 @@ export interface Brief { headline: string; second_line: string; markdown: string
 export interface Run { id: string; started_at: string; finished_at: string | null; status: string; files_processed: number }
 export interface SlothEvent { type: string; agent?: string; message: string; ts: string; data?: Record<string, unknown> }
 
+/** Hosted demo build (VITE_DEMO=1): no backend, data comes from a bundled snapshot. */
+export const DEMO = import.meta.env.VITE_DEMO === '1';
+const demo = () => import('./demo/mock');
+
 async function req<T>(url: string, init?: RequestInit): Promise<T> {
+  if (DEMO) return (await demo()).mockRequest(url, init) as Promise<T>;
   const r = await fetch(url, { ...init, headers: { 'Content-Type': 'application/json', ...init?.headers } });
   if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error ?? r.statusText);
   return r.json() as Promise<T>;
@@ -56,14 +61,20 @@ export function useEvents() {
   const [events, setEvents] = useState<SlothEvent[]>([]);
   const [running, setRunning] = useState(false);
   useEffect(() => {
-    const es = new EventSource('/api/events');
-    es.onmessage = (m) => {
-      const e = JSON.parse(m.data) as SlothEvent;
+    const onEvent = (e: SlothEvent) => {
       setEvents((xs) => (xs.some((x) => x.ts === e.ts && x.message === e.message) ? xs : [...xs.slice(-300), e]));
       if (e.type === 'run.start') setRunning(true);
       if (e.type === 'run.end') { setRunning(false); qc.invalidateQueries(); }
       if (e.type === 'action.queued') qc.invalidateQueries();
     };
+    if (DEMO) {
+      let off: (() => void) | undefined;
+      let gone = false;
+      demo().then((m) => { if (!gone) off = m.subscribe(onEvent); });
+      return () => { gone = true; off?.(); };
+    }
+    const es = new EventSource('/api/events');
+    es.onmessage = (m) => onEvent(JSON.parse(m.data) as SlothEvent);
     return () => es.close();
   }, [qc]);
   return { events, running };
