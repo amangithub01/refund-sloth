@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Check, Menu, ShieldCheck, WifiOff, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Check, Menu, Play, ShieldCheck, WifiOff, X } from 'lucide-react';
 import { api, money, useDeadlines, useHealth, useStats, useSubs } from '../api';
 import { Logo, TYPE_LABEL } from './ui';
 import LaptopOrbit from './LaptopOrbit';
 
 const WORDS = ['nap.', 'sleep.', 'binge.', 'do nothing.'];
-const LINKS = [['How it works', 'how'], ['Features', 'features'], ['Agents', 'agents'], ['Privacy', 'privacy']] as const;
+const LINKS = [['Watch', 'watch'], ['How it works', 'how'], ['Features', 'features'], ['Agents', 'agents'], ['Privacy', 'privacy']] as const;
 const FALLBACK_MERCHANTS = ['Adobe', 'Netflix', 'Spotify', 'Planet Fitness', 'Audible', 'Hulu', 'Dell', 'Best Buy', 'Apple Store', 'Dropbox'];
 const TYPE_COLOR: Record<string, string> = { trial_end: '#391a18', return_by: '#c8ae82', warranty_until: '#9aa394', renewal: '#a65a49' };
 
@@ -102,11 +102,23 @@ export default function Landing({ open }: { open: () => void }) {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button className="btn-primary px-6! py-3!" disabled={busy} onClick={wake}>{busy ? 'Working slowly…' : <>Wake the sloth <ArrowRight size={15} /></>}</button>
-          <button className="btn-ghost px-6! py-3!" onClick={open}>Open dashboard</button>
+          <button className="btn-ghost px-6! py-3!" onClick={() => go('watch')}><Play size={14} /> Watch the 55s demo</button>
         </div>
       </section>
 
       <LaptopOrbit />
+
+      {/* Launch video */}
+      <section id="watch" className="mx-auto max-w-5xl scroll-mt-20 px-5 pb-24">
+        <div className="text-center">
+          <div className="eyebrow">See it in 55 seconds</div>
+          <h2 className="mt-5 text-3xl md:text-5xl">Drop. Nap. Approve. <span className="text-stone">Watch how it works.</span></h2>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-[1.75rem] border border-line bg-ink p-2 shadow-2xl shadow-ink/20">
+          <video className="aspect-video w-full rounded-[1.35rem] bg-ink" src="/launch.mp4" poster="/launch-poster.jpg"
+            controls playsInline preload="metadata" aria-label="Refund Sloth launch video: how the app works" />
+        </div>
+      </section>
 
       {/* Meet + live cards */}
       <section className="mx-auto grid max-w-6xl items-end gap-10 px-5 pb-20 md:grid-cols-[1fr_1.5fr]">
