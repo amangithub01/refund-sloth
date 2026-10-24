@@ -4,6 +4,8 @@
 
 No API keys. No cloud. $0 per run. Works with Wi-Fi off.
 
+🌐 **Try the live demo:** [refund-sloth.vercel.app](https://refund-sloth.vercel.app). It shows the dashboard with sample data, runs entirely in your browser, and needs no install. The real agents and mail sync run only on your own machine (see [Setup](#setup)).
+
 ## 🎬 Demo
 ![Refund Sloth demo: landing page, laptop orbit, dashboard tabs, agent log, mail connect](docs/media/refund-sloth-demo.gif)
 
