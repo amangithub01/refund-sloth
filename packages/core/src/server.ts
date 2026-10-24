@@ -58,7 +58,7 @@ export function createApp(cfg: SlothConfig = loadConfig()) {
   });
   app.get('/api/actions', (req, res) => res.json(withLinks(ledger.actions((req.query.status as string) || undefined))));
 
-  // ---- Mailbox (read-only IMAP). The app password goes straight to the macOS Keychain. ----
+  // ---- Mailbox (read-only IMAP). The app password goes straight to the OS secret store. ----
   const mailStatus = () => {
     const a = loadAccount();
     return a ? { connected: true, user: a.user, host: a.host, days: a.days, last_sync: a.last_sync ?? null, fetched_total: a.fetched_total ?? 0, has_password: !!getPassword(a.user) } : { connected: false };
@@ -70,7 +70,7 @@ export function createApp(cfg: SlothConfig = loadConfig()) {
       const account = { user: b.email.trim(), host: b.host || providerHost(b.email), port: 993, days: b.days ?? 60 };
       const pass = b.app_password.replace(/\s+/g, '');
       try { await testLogin(account, pass); } catch (e) { return res.status(400).json({ error: (e as Error).message }); }
-      setPassword(account.user, pass);
+      if (!process.env.SLOTH_IMAP_PASSWORD) setPassword(account.user, pass);
       saveAccount(account);
       res.json(mailStatus());
     } catch (e) { next(e); }

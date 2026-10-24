@@ -3,7 +3,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { Lock, Mail, RefreshCw, X } from 'lucide-react';
 import { api, useMail, type MailStatus } from '../api';
 
-/** Connect a mailbox (read-only IMAP + app password stored in the macOS Keychain). */
+/** Connect a mailbox (read-only IMAP + app password stored in the OS secret store). */
 export default function MailConnect({ onClose }: { onClose: () => void }) {
   const qc = useQueryClient();
   const { data: mail } = useMail();
@@ -26,7 +26,7 @@ export default function MailConnect({ onClose }: { onClose: () => void }) {
     const r = await api.post<{ matched: number; fetched: number }>('/api/mail/sync');
     return `${r.matched} matching emails · ${r.fetched} new. ${r.fetched ? 'Press "Wake the sloth" to process them.' : 'Nothing new.'}`;
   });
-  const disconnect = () => run(async () => { await api.del('/api/mail'); return 'Disconnected. The password was removed from your Keychain.'; });
+  const disconnect = () => run(async () => { await api.del('/api/mail'); return 'Disconnected. The saved password was removed.'; });
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4 backdrop-blur-sm" onClick={onClose}>
@@ -62,7 +62,7 @@ export default function MailConnect({ onClose }: { onClose: () => void }) {
             <ol className="list-decimal space-y-1 pl-5 text-xs text-stone-dark">
               <li>Gmail: turn on 2-Step Verification, then create an app password at{' '}
                 <a className="underline" href="https://myaccount.google.com/apppasswords" target="_blank" rel="noopener noreferrer">myaccount.google.com/apppasswords</a>.</li>
-              <li>Paste it here. It goes straight into your macOS Keychain, never a file and never a server.</li>
+              <li>Paste it here. It's saved encrypted on this computer (macOS Keychain / Windows DPAPI), never sent to a server.</li>
               <li>Outlook, Yahoo and iCloud work too (use their app passwords).</li>
             </ol>
             <button disabled={busy || !email || !pass} className="btn-primary w-full justify-center">

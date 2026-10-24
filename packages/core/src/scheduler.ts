@@ -60,7 +60,35 @@ ${args}
 `;
 }
 
+export const WIN_TASK = 'RefundSlothNightly';
+export const winCmdPath = () => path.join(dataPaths().root, 'nightly.cmd');
+
+/** Windows: a .cmd wrapper (keeps the schtasks /TR value short and quoting simple). */
+export function buildWinCmd() {
+  const pct = (s: string) => s.replace(/%/g, '%%');
+  const cli = path.join(REPO_ROOT, 'packages', 'cli', 'src', 'index.ts');
+  const logFile = path.join(dataPaths().root, 'nightly.log');
+  return [
+    '@echo off',
+    `cd /d "${pct(REPO_ROOT)}"`,
+    'set NODE_NO_WARNINGS=1',
+    `set "SLOTH_DATA_DIR=${pct(dataPaths().root)}"`,
+    `"${pct(process.execPath)}" --import "${pct(import.meta.resolve('tsx/esm'))}" "${pct(cli)}" run >> "${pct(logFile)}" 2>&1`,
+    '',
+  ].join('\r\n');
+}
+
 export function installSchedule(expr: string) {
+  if (process.platform === 'win32') {
+    const { Hour, Minute } = hourMinute(expr);
+    const cmd = winCmdPath();
+    fs.mkdirSync(path.dirname(cmd), { recursive: true });
+    fs.writeFileSync(cmd, buildWinCmd());
+    const at = `${String(Hour).padStart(2, '0')}:${String(Minute).padStart(2, '0')}`;
+    execFileSync('schtasks', ['/Create', '/F', '/SC', 'DAILY', '/TN', WIN_TASK, '/TR', `"${cmd}"`, '/ST', at], { stdio: 'ignore', windowsHide: true });
+    return `Task Scheduler "${WIN_TASK}" at ${at} → ${cmd}`;
+  }
+  if (process.platform !== 'darwin') throw new Error('Scheduler install supports macOS and Windows. On Linux keep `sloth serve` running (it has a built-in nightly cron) or add `sloth run` to crontab.');
   const p = plistPath();
   fs.mkdirSync(path.dirname(p), { recursive: true });
   fs.writeFileSync(p, buildPlist(expr));
@@ -71,6 +99,12 @@ export function installSchedule(expr: string) {
 }
 
 export function uninstallSchedule() {
+  if (process.platform === 'win32') {
+    try { execFileSync('schtasks', ['/Delete', '/F', '/TN', WIN_TASK], { stdio: 'ignore', windowsHide: true }); } catch { /* not installed */ }
+    fs.rmSync(winCmdPath(), { force: true });
+    return `Task Scheduler "${WIN_TASK}"`;
+  }
+  if (process.platform !== 'darwin') return 'nothing (no scheduler on this OS)';
   const p = plistPath();
   const domain = `gui/${process.getuid?.() ?? 501}`;
   try { execFileSync('launchctl', ['bootout', domain, p], { stdio: 'ignore' }); } catch { /* not loaded */ }

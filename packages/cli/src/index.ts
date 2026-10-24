@@ -7,7 +7,7 @@ import pc from 'picocolors';
 import Table from 'cli-table3';
 import { REPO_ROOT, dataPaths, loadConfig, today, daysUntil, type SlothConfig } from '@sloth/shared';
 import { Ledger } from '@sloth/mcp-ledger';
-import { deletePassword, getPassword, loadAccount, providerHost, saveAccount, setPassword, syncMail, testLogin } from '@sloth/mcp-mail';
+import { deletePassword, getPassword, loadAccount, providerHost, saveAccount, secretStoreName, setPassword, syncMail, testLogin } from '@sloth/mcp-mail';
 import {
   bus, createContext, ensureDataDirs, installSchedule, LLM, McpHub, runNight, startCron, startServer, uninstallSchedule, type SlothEvent,
 } from '@sloth/core';
@@ -70,7 +70,16 @@ async function doRun(opts: { today?: string; dryRun?: boolean }) {
   ledger.close();
 }
 
-function openUrl(url: string) { try { spawn('open', [url], { stdio: 'ignore', detached: true }).unref(); } catch { /* ignore */ } }
+function openUrl(url: string) {
+  const [cmd, args] = process.platform === 'win32' ? ['cmd', ['/c', 'start', '""', url]] : process.platform === 'darwin' ? ['open', [url]] : ['xdg-open', [url]];
+  try { const c = spawn(cmd, args as string[], { stdio: 'ignore', detached: true, windowsHide: true }); c.on('error', () => {}); c.unref(); } catch { /* no browser */ }
+}
+
+function copyToClipboard(text: string): boolean {
+  const tries: [string, string[]][] = process.platform === 'win32' ? [['clip', []]] : process.platform === 'darwin' ? [['pbcopy', []]] : [['wl-copy', []], ['xclip', ['-selection', 'clipboard']]];
+  for (const [cmd, args] of tries) { try { execFileSync(cmd, args, { input: text, stdio: ['pipe', 'ignore', 'ignore'] }); return true; } catch { /* try next */ } }
+  return false;
+}
 
 const program = new Command().name('sloth').description('🦥 Refund Sloth – gets your money back while you nap. 100% local.').version('0.1.0');
 
@@ -137,7 +146,7 @@ program.command('approve <id>').description('approve an action (copies the email
   if (!a) { console.log(pc.red(`no action ${id}`)); l.close(); process.exitCode = 1; return; }
   l.decideAction(id, 'approved');
   if (a.type !== 'review') {
-    try { execFileSync('pbcopy', { input: `Subject: ${a.subject ?? ''}\n\n${a.body}` }); console.log('📋 email copied to clipboard'); } catch { /* not macOS */ }
+    if (copyToClipboard(`Subject: ${a.subject ?? ''}\n\n${a.body}`)) console.log('📋 email copied to clipboard');
     console.log(`✉️  mailto:${a.to_address ?? ''}?subject=${encodeURIComponent(a.subject ?? '')}&body=${encodeURIComponent(a.body)}`);
   }
   console.log(pc.green(`✅ approved – ${a.title}`));
@@ -162,7 +171,7 @@ program.command('serve').description('start dashboard + API + nightly scheduler'
     if (o.open) openUrl(url);
   });
 
-const schedule = program.command('schedule').description('install/uninstall the macOS launchd nightly job');
+const schedule = program.command('schedule').description('install/uninstall the nightly job (macOS launchd / Windows Task Scheduler)');
 schedule.command('install').action(() => { console.log(`✅ installed ${installSchedule(loadConfig().schedule)} (runs even when the CLI is closed)`); });
 schedule.command('uninstall').action(() => { console.log(`🗑  removed ${uninstallSchedule()}`); });
 
@@ -214,7 +223,7 @@ function askHidden(q: string): Promise<string> {
 }
 
 const mail = program.command('mail').description('connect a mailbox (read-only IMAP) so trial & receipt emails arrive by themselves');
-mail.command('connect <email>').description('save an app password in the macOS Keychain and test the login')
+mail.command('connect <email>').description('test the login and save the app password (macOS Keychain / Windows DPAPI)')
   .option('--host <host>', 'IMAP host (auto for Gmail, Outlook, Yahoo, iCloud)').option('--days <n>', 'how far back to look', '60')
   .action(async (email: string, o) => {
     const account = { user: email, host: o.host ?? providerHost(email), port: 993, days: Number(o.days) };
@@ -223,7 +232,7 @@ mail.command('connect <email>').description('save an app password in the macOS K
     process.stdout.write(pc.dim(`Testing login to ${account.host}… `));
     await testLogin(account, pass);
     console.log(pc.green('ok'));
-    if (process.platform === 'darwin') setPassword(email, pass);
+    if (!process.env.SLOTH_IMAP_PASSWORD) setPassword(email, pass);
     saveAccount(account);
     console.log(`${pc.green('✔')} Connected. Refund Sloth will read (never send, delete or mark as read) matching emails before each run.`);
     console.log(pc.dim('Try it now: sloth mail sync'));
@@ -236,9 +245,9 @@ mail.command('sync').description('fetch matching emails into the inbox now').opt
 mail.command('status').description('show the connected mailbox').action(() => {
   const a = loadAccount();
   if (!a) return console.log(pc.yellow('No mailbox connected. Run: sloth mail connect you@gmail.com'));
-  console.log(`📬 ${pc.bold(a.user)} via ${a.host} · last ${a.days} days · last sync ${a.last_sync ?? 'never'} · ${a.fetched_total ?? 0} emails fetched · password ${getPassword(a.user) ? pc.green('in Keychain') : pc.red('missing')}`);
+  console.log(`📬 ${pc.bold(a.user)} via ${a.host} · last ${a.days} days · last sync ${a.last_sync ?? 'never'} · ${a.fetched_total ?? 0} emails fetched · password ${getPassword(a.user) ? pc.green(`saved (${secretStoreName})`) : pc.red('missing')}`);
 });
-mail.command('disconnect').description('forget the mailbox and delete the password from the Keychain').action(() => {
+mail.command('disconnect').description('forget the mailbox and delete the saved password').action(() => {
   const a = loadAccount();
   if (a) { deletePassword(a.user); fs.rmSync(dataPaths().mail, { force: true }); }
   console.log(`${pc.green('✔')} Disconnected. Emails already copied stay in the inbox.`);

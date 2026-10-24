@@ -37,13 +37,13 @@ Your receipts and bank statement are the most private data you have. They should
 | 🦅 **Deadlines** | Trial ends, return-by, warranty-until, renewals. Uses the document first, then `policies.json`, then a clearly marked AI guess. |
 | 🧾 **Subscription audit** | Finds recurring charges in your bank CSV and flags 🧟 zombies, 👯 duplicates and 📈 price hikes. |
 | 👻 **Ghostwriter** | Ready-to-send cancel/return emails (tone: polite, firm or "karen" 😄). |
-| 📅 **Reminders** | `.ics` files with alarms 3 days and 1 day before, plus macOS notifications. |
+| 📅 **Reminders** | `.ics` files with alarms 3 days and 1 day before, plus desktop notifications (macOS / Windows). |
 | ☀️ **Morning brief** | "🦥 3 deadlines this week · $86.96/mo you can cut · 10 drafts ready". |
 | ✅ **You stay in charge** | Nothing is ever sent or paid. Approve = copy to clipboard / open in Mail. |
 | 💰 **Savings tracker** | Saved so far vs. money at risk. |
-| ⏰ **Runs itself** | Nightly at 2 AM via launchd (even with the app closed) or the in-app cron. |
+| ⏰ **Runs itself** | Nightly at 2 AM via launchd (macOS) or Task Scheduler (Windows), even with the app closed, or the in-app cron. |
 | 📬 **Mail sync (optional)** | Connect Gmail/iCloud/Outlook/any IMAP with an app password. Read-only: pulls only receipt/trial/subscription emails from the last 60 days into the inbox. Nothing is marked as read. |
-| 🚨 **Urgent alerts** | Anything ending within `urgentDays` (default 2) gets its own macOS popup and a red banner at the top of the dashboard. |
+| 🚨 **Urgent alerts** | Anything ending within `urgentDays` (default 2) gets its own desktop notification and a red banner at the top of the dashboard. |
 | ↗️ **Cancel now** | One-click links to the store's cancel/return page (`links.json`), next to every deadline, subscription and draft. |
 
 ## Architecture
@@ -73,7 +73,7 @@ flowchart LR
     docs["docs<br/>pdf · image · eml · mbox · csv"]
     ledger[("ledger<br/>SQLite")]
     cal["calendar<br/>.ics reminders"]
-    notify["notify<br/>macOS + brief.md"]
+    notify["notify<br/>desktop popup + brief.md"]
     mail["mail<br/>read-only IMAP"]
   end
 
@@ -105,14 +105,18 @@ Every agent talks to tools over the **Model Context Protocol**. The LLMs run in 
 | Ghostwriter | `qwen3.5:35b` | draft emails |
 | Sloth Boss | `qwen3.5:35b` (tool calling) | review the ledger, write the brief |
 
-## Setup (macOS)
+## Setup
+**You need:** [Node.js](https://nodejs.org) 22.13 or newer (the LTS is fine), [Git](https://git-scm.com) and [Ollama](https://ollama.com). For the full profile you need about 32 GB of RAM; with 8–16 GB use the [Lite profile](#smaller-laptop-use-the-lite-profile-816-gb-ram).
+
+### 🍎 macOS
 ```bash
 brew install ollama            # or the app from ollama.com
 ollama serve &                 # if not already running
 ollama pull qwen3.5:35b
 ollama pull qwen2.5vl:7b
 
-git clone <this repo> refund-sloth && cd refund-sloth
+git clone https://github.com/amangithub01/refund-sloth.git
+cd refund-sloth
 npm install
 npm run build                  # type-check + build the dashboard
 npm run sloth -- init          # creates ~/RefundSloth and a config
@@ -121,17 +125,60 @@ npm run sloth -- demo --serve  # fake data, today = 2026-10-21, opens the dashbo
 ```
 Tip: `alias sloth="npm run --silent --prefix ~/refund-sloth sloth --"`.
 
+### 🪟 Windows 10 / 11
+**1. Install the tools** (PowerShell; or download the installers from each website):
+```powershell
+winget install OpenJS.NodeJS.LTS
+winget install Git.Git
+winget install Ollama.Ollama
+```
+Close and reopen PowerShell so `node`, `git` and `ollama` are on your PATH. Ollama starts by itself in the system tray.
+
+**2. Download the models** (about 30 GB in total; see the Lite profile for smaller ones):
+```powershell
+ollama pull qwen3.5:35b
+ollama pull qwen2.5vl:7b
+```
+
+**3. Download and run Refund Sloth:**
+```powershell
+git clone https://github.com/amangithub01/refund-sloth.git
+cd refund-sloth
+npm install
+npm run build
+npm run sloth -- init          # creates C:\Users\<you>\RefundSloth and a config
+npm run sloth -- doctor        # all green?
+npm run sloth -- demo --serve  # fake data; opens http://localhost:4747 in your browser
+```
+No Git? On the GitHub page click **Code → Download ZIP**, unzip it, and run the same commands from step 3 inside the unzipped folder.
+
+**4. Use it:**
+- Your drop folder is `C:\Users\<you>\RefundSloth\inbox`; drop receipts, PDFs, `.eml` files and bank CSVs there.
+- Nightly run at 2 AM, even when the app is closed: `npm run sloth -- schedule install` (Windows Task Scheduler, task "RefundSlothNightly"). Remove with `npm run sloth -- schedule uninstall`.
+- Notifications appear as Windows toast notifications. **Approve** copies the email to the clipboard.
+- Setting an environment variable in PowerShell: `$env:SLOTH_PROFILE="lite"; npm run sloth -- run`.
+
+<details><summary>Windows troubleshooting</summary>
+
+- **`npm` isn't recognised:** reopen PowerShell after installing Node, or restart Windows.
+- **"running scripts is disabled on this system":** run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, or use `npm.cmd` instead of `npm`.
+- **`sloth doctor` says Ollama isn't reachable:** start Ollama from the Start menu, then check `ollama list`.
+- **Port 4747 is busy:** `npm run sloth -- serve --port 4848`.
+- The Windows-specific parts (Task Scheduler, clipboard, saving the mail password) use only built-in Windows tools: `schtasks`, `clip` and PowerShell. They've been written and unit-tested, but not yet run on a real Windows PC. Please open an issue if something doesn't work.
+</details>
+
 ### Connect your mailbox (optional)
 Rather not forward emails by hand? Let the sloth fetch them:
 1. Gmail: turn on 2-Step Verification, then create an **app password** at <https://myaccount.google.com/apppasswords> (iCloud: appleid.apple.com → App-Specific Passwords).
 2. Dashboard → **Connect mail**, or `npm run sloth -- mail connect`.
 
-Every nightly run then syncs before the Scout agent. The mailbox is opened **read-only** and only matching emails (receipts, orders, trials, renewals) are saved as `.eml` files in the inbox. The password lives in the **macOS Keychain** (or `SLOTH_IMAP_PASSWORD`), never in a file. Skip with `SLOTH_NO_MAIL=1`; remove with `sloth mail disconnect`.
+Every nightly run then syncs before the Scout agent. The mailbox is opened **read-only** and only matching emails (receipts, orders, trials, renewals) are saved as `.eml` files in the inbox. The password is stored encrypted: in the **macOS Keychain** on a Mac, or encrypted with **Windows DPAPI** (only your Windows account can decrypt it) on Windows. You can also set `SLOTH_IMAP_PASSWORD` instead. Skip with `SLOTH_NO_MAIL=1`; remove with `sloth mail disconnect`.
 
 ### Smaller laptop? Use the Lite profile (8–16 GB RAM)
 ```bash
 ollama pull qwen3:8b && ollama pull qwen2.5vl:3b
 SLOTH_PROFILE=lite npm run sloth -- run     # or set "profile": "lite" in ~/RefundSloth/sloth.config.json
+# Windows PowerShell: $env:SLOTH_PROFILE="lite"; npm run sloth -- run
 ```
 There's also a `single` profile that uses only `qwen3.5:35b` (it has vision too): one download.
 
@@ -144,7 +191,7 @@ There's also a `single` profile that uses only `qwen3.5:35b` (it has vision too)
 | `sloth brief` / `sloth queue` | latest brief / pending drafts |
 | `sloth approve|dismiss <id>`, `sloth snooze <id> [days]` | decide (approve copies the email + prints a `mailto:`) |
 | `sloth serve [--port 4747] [--no-schedule]` | dashboard + API + nightly cron |
-| `sloth schedule install|uninstall` | launchd job at 02:00 (`~/Library/LaunchAgents/dev.refundsloth.nightly.plist`) |
+| `sloth schedule install|uninstall` | nightly job at 02:00: launchd on macOS, Task Scheduler (`RefundSlothNightly`) on Windows |
 | `sloth demo [--serve]` | copy fake fixtures into the inbox and run |
 | `sloth eval` | accuracy on fixtures → `eval/RESULTS.md` |
 | `sloth mail connect|sync|status|disconnect` | optional read-only IMAP sync (Gmail, iCloud, Outlook, any IMAP) |
@@ -187,7 +234,7 @@ npm run fixtures       # regenerate fake fixtures
 - Scanned (image-only) PDFs: export the page as an image and drop that in.
 - Policy-based dates are estimates; "AI guess" dates especially. Check them.
 - The bank CSV parser auto-detects common column layouts; exotic exports may need a tweak.
-- The scheduler installer is macOS (launchd); `sloth serve` cron works everywhere.
+- Runs on macOS and Windows. Linux works too, but `schedule install` isn't supported there: keep `sloth serve` running (built-in cron) or add `sloth run` to crontab. Mail passwords on Linux come from `SLOTH_IMAP_PASSWORD`.
 
 ## License
 MIT. All fixtures in `eval/fixtures` are fake.

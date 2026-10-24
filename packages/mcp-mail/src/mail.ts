@@ -8,7 +8,7 @@ import { dataPaths } from '@sloth/shared';
 /**
  * Read-only email sync (IMAP). Only messages that look like money admin (trials, subscriptions,
  * receipts, orders, returns, warranties) are copied into the inbox as .eml files; everything
- * else stays on the mail server. The password lives in the macOS Keychain, never in a file.
+ * else stays on the mail server. The password lives in the macOS Keychain (Windows: a DPAPI-encrypted file), never in plain text.
  */
 
 export interface MailAccount { user: string; host: string; port: number; days: number; last_sync?: string; fetched_total?: number }
@@ -45,23 +45,41 @@ export function saveAccount(a: MailAccount) {
   fs.writeFileSync(dataPaths().mail, JSON.stringify(a, null, 2), { mode: 0o600 });
 }
 
-// ---- Keychain (macOS). Other OSes: set SLOTH_IMAP_PASSWORD. ----
+// ---- Password store: macOS Keychain, or a Windows DPAPI-encrypted file. Elsewhere: SLOTH_IMAP_PASSWORD. ----
 const mac = process.platform === 'darwin';
+const win = process.platform === 'win32';
+export const secretStoreName = mac ? 'macOS Keychain' : win ? 'Windows (DPAPI-encrypted)' : 'SLOTH_IMAP_PASSWORD';
+const winSecretPath = (user: string) => path.join(path.dirname(dataPaths().mail), `mail-${crypto.createHash('sha1').update(user).digest('hex').slice(0, 12)}.secret`);
+// DPAPI ties the ciphertext to this Windows user account; the password travels over stdin, never the command line.
+const ps = (script: string, input: string) =>
+  execFileSync('powershell.exe', ['-NoProfile', '-NonInteractive', '-Command', script], { input, encoding: 'utf8', stdio: ['pipe', 'pipe', 'ignore'], windowsHide: true }).replace(/[\r\n]+$/, '');
+const PS_ENCRYPT = '$p = [Console]::In.ReadToEnd().TrimEnd([char]13, [char]10); ConvertTo-SecureString $p -AsPlainText -Force | ConvertFrom-SecureString';
+const PS_DECRYPT = '$s = [Console]::In.ReadToEnd().Trim() | ConvertTo-SecureString; [Runtime.InteropServices.Marshal]::PtrToStringBSTR([Runtime.InteropServices.Marshal]::SecureStringToBSTR($s))';
+
 export function getPassword(user: string): string | null {
   if (process.env.SLOTH_IMAP_PASSWORD) return process.env.SLOTH_IMAP_PASSWORD;
-  if (!mac) return null;
-  try { return execFileSync('security', ['find-generic-password', '-s', SERVICE, '-a', user, '-w'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { return null; }
+  try {
+    if (mac) return execFileSync('security', ['find-generic-password', '-s', SERVICE, '-a', user, '-w'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    if (win) { const f = winSecretPath(user); return fs.existsSync(f) ? ps(PS_DECRYPT, fs.readFileSync(f, 'utf8')) || null : null; }
+  } catch { /* not stored */ }
+  return null;
 }
 export function setPassword(user: string, password: string) {
-  if (!mac) throw new Error('Keychain is macOS-only. On other systems set SLOTH_IMAP_PASSWORD instead.');
-  const q = (s: string) => `"${s.replace(/["\\]/g, '\\$&')}"`;
-  // `security -i` reads the command from stdin, so the password never appears in the process list.
-  execFileSync('security', ['-i'], { input: `add-generic-password -U -s ${q(SERVICE)} -a ${q(user)} -w ${q(password)}\n`, stdio: ['pipe', 'ignore', 'ignore'] });
-  if (getPassword(user) !== password) throw new Error('Could not save the password to the Keychain');
+  if (mac) {
+    const q = (s: string) => `"${s.replace(/["\\]/g, '\\$&')}"`;
+    // `security -i` reads the command from stdin, so the password never appears in the process list.
+    execFileSync('security', ['-i'], { input: `add-generic-password -U -s ${q(SERVICE)} -a ${q(user)} -w ${q(password)}\n`, stdio: ['pipe', 'ignore', 'ignore'] });
+  } else if (win) {
+    fs.mkdirSync(path.dirname(winSecretPath(user)), { recursive: true });
+    fs.writeFileSync(winSecretPath(user), ps(PS_ENCRYPT, password), { mode: 0o600 });
+  } else {
+    throw new Error('No password store on this OS. Set SLOTH_IMAP_PASSWORD instead.');
+  }
+  if (getPassword(user) !== password) throw new Error(`Could not save the password (${secretStoreName})`);
 }
 export function deletePassword(user: string) {
-  if (!mac) return;
-  try { execFileSync('security', ['delete-generic-password', '-s', SERVICE, '-a', user], { stdio: 'ignore' }); } catch { /* not there */ }
+  if (mac) { try { execFileSync('security', ['delete-generic-password', '-s', SERVICE, '-a', user], { stdio: 'ignore' }); } catch { /* not there */ } }
+  if (win) fs.rmSync(winSecretPath(user), { force: true });
 }
 
 const client = (a: Pick<MailAccount, 'user' | 'host' | 'port'>, pass: string) =>
@@ -84,7 +102,7 @@ export async function syncMail(opts: { days?: number; max?: number } = {}): Prom
   const a = loadAccount();
   if (!a) throw new Error('No mail account connected. Run `sloth mail connect` or use the dashboard.');
   const pass = getPassword(a.user);
-  if (!pass) throw new Error(`No password in the Keychain for ${a.user}. Connect again.`);
+  if (!pass) throw new Error(`No saved password for ${a.user}. Connect again.`);
   const days = opts.days ?? a.days, max = opts.max ?? 200;
   const inbox = dataPaths().inbox;
   fs.mkdirSync(inbox, { recursive: true });
